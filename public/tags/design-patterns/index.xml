@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Design Patterns on DevBlog</title>
+    <link>http://localhost:1313/tags/design-patterns/</link>
+    <description>Recent content in Design Patterns on DevBlog</description>
+    <generator>Hugo</generator>
+    <language>vi</language>
+    <lastBuildDate>Mon, 06 Oct 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/design-patterns/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Các mẫu thiết kế phổ biến trong Java</title>
+      <link>http://localhost:1313/blog/design-patterns-java/</link>
+      <pubDate>Mon, 06 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/design-patterns-java/</guid>
+      <description>&lt;hr&gt;&#xA;&lt;h1 id=&#34;các-mẫu-thiết-kế-phổ-biến-trong-java&#34;&gt;Các mẫu thiết kế phổ biến trong Java&lt;/h1&gt;&#xA;&lt;p&gt;Mẫu thiết kế (design patterns) là các giải pháp tái sử dụng cho các vấn đề phổ biến trong phát triển phần mềm. Chúng giúp cải thiện cấu trúc và tổ chức mã nguồn, làm cho ứng dụng dễ bảo trì và mở rộng hơn. Trong bài viết này, chúng ta sẽ khám phá một số mẫu thiết kế phổ biến trong Java và cách áp dụng chúng trong lập trình hướng đối tượng (OOP).&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

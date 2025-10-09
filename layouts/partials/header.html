@@ -1,0 +1,23 @@
+<header>
+  <div class="header-container">
+    <a href="/" class="logo"><span>&lt;/&gt;</span> DevBlog</a>
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+      <span class="hamburger"></span>
+    </button>
+      <nav id="main-nav" class="nav-link active" aria-label="Main navigation">
+      {{ range .Site.Menus.main }}
+        <a href="{{ .URL | relURL }}" {{ if $.IsMenuCurrent "main" . }}class="active"{{ end }}>{{ .Name }}</a>
+      {{ end }}
+    </nav>
+  </div>
+</header>
+<!-- <script>
+  const navToggle = document.querySelector('.nav-toggle');
+  const mainNav = document.getElementById('main-nav');
+
+  navToggle.addEventListener('click', () => {
+    const isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
+    navToggle.setAttribute('aria-expanded', !isExpanded);
+    mainNav.classList.toggle('active');
+  });
+</script> -->

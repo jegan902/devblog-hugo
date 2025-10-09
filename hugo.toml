@@ -1,0 +1,48 @@
+baseURL = "http://localhost:1313/"
+languageCode = "vi"
+title = "DevBlog"
+theme = "hugo-agency-web"
+
+[params]
+  description = "Khám phá thế giới lập trình với các bài viết chi tiết về Java|và JavaScript. Học hỏi, chia sẻ và phát triển kỹ năng lập|trình của bạn."
+  author = "Nguyễn Ngọc hưng"
+  avatar = "/images/profile.jpg"
+
+
+[taxonomies]
+  category = "categories"
+  tag = "tags"
+
+# Định nghĩa các type nội dung (nếu chưa có)
+[content]
+  [content.types]
+    blog = "blog"
+    
+[pagination]
+  pagerSize = 10  # Use this instead of paginate
+  
+
+[[menus.main]]
+  name = "Trang chủ"
+  url = "/"
+  weight = 1
+
+[[menus.main]]
+  name = "Blog"
+  url = "/blog/"
+  weight = 2
+
+[[menus.main]]
+  name = "Giới thiệu"
+  url = "/about/"
+  weight = 3
+
+[[menus.main]]
+  name = "Liên hệ"
+  url = "/contact/"
+  weight = 4
+
+  [markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true

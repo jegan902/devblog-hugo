@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Es6 | DevBlog</title>
+  
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Es6 - DevBlog</title>
+<meta name="author" content="Nguyễn Ngọc hưng">
+<meta name="description" content="Khám phá thế giới lập trình với các bài viết chi tiết về Java|và JavaScript. Học hỏi, chia sẻ và phát triển kỹ năng lập|trình của bạn.">
+
+
+<meta property="og:title" content="Es6 - DevBlog">
+<meta property="og:description" content="Khám phá thế giới lập trình với các bài viết chi tiết về Java|và JavaScript. Học hỏi, chia sẻ và phát triển kỹ năng lập|trình của bạn.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="http://localhost:1313/tags/es6/">
+
+<meta property="og:image" content="http://localhost:1313/images/og-default.png">
+
+
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Es6 - DevBlog">
+<meta name="twitter:description" content="Khám phá thế giới lập trình với các bài viết chi tiết về Java|và JavaScript. Học hỏi, chia sẻ và phát triển kỹ năng lập|trình của bạn.">
+
+<meta name="twitter:image" content="http://localhost:1313/images/og-default.png">
+
+
+
+<link rel="icon" href="/favicon.ico" type="image/x-icon">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js" defer></script>
+
+
+<link rel="stylesheet" href="http://localhost:1313/css/style.css">
+
+
+<script src="http://localhost:1313/js/script.js" defer></script>
+</head>
+<body class="font-sans bg-gray-950 text-gray-100">
+  <header>
+  <div class="header-container">
+    <a href="/" class="logo"><span>&lt;/&gt;</span> DevBlog</a>
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+      <span class="hamburger"></span>
+    </button>
+      <nav id="main-nav" class="nav-link active" aria-label="Main navigation">
+      
+        <a href="/" >Trang chủ</a>
+      
+        <a href="/blog/" >Blog</a>
+      
+        <a href="/about/" >Giới thiệu</a>
+      
+        <a href="/contact/" >Liên hệ</a>
+      
+    </nav>
+  </div>
+</header>
+
+  <main class="container mx-auto px-6 py-10">
+    
+<section class="blog-list">
+  
+  <h1 class="blog-title">BLOG</h1>
+  <p class="blog-description">
+    Khám phá các bài viết chi tiết về Java và JavaScript. 
+    Tìm hiểu kiến thức lập trình từ cơ bản đến nâng cao.
+  </p>
+
+  
+  <div class="filter">
+    
+    
+
+    
+    
+    
+
+    
+    
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+
+    
+    <input type="text" id="search-input" placeholder="Tìm kiếm bài viết..." class="search-input">
+
+    
+    <button class="category-btn active" data-category="all">
+      TẤT CẢ (9)
+    </button>
+    <button class="category-btn" data-category="java">
+      JAVA (5)
+    </button>
+    <button class="category-btn" data-category="javascript">
+      JAVASCRIPT (4)
+    </button>
+  </div>
+
+  
+  <div class="posts-grid">
+    
+      <article class="post-card" data-category="java">
+        <a class="post-link" href="http://localhost:1313/blog/design-patterns-java/">
+          
+            
+
+
+
+
+
+
+
+
+
+  
+  <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=80" class="post-image" alt="Es6">
+
+          
+        </a>
+
+        <div class="post-content">
+          
+          
+            <span class="category">JAVA</span>
+          
+
+          
+          <h2 class="post-title">Các mẫu thiết kế phổ biến trong Java</h2>
+
+          
+          <p class="post-summary">
+            Khám phá các mẫu thiết kế (design patterns) phổ biến trong Java và cách áp dụng chúng để xây dựng các ứng dụng hiệu quả và dễ bảo trì.
+          </p>
+
+          
+          
+            <div class="post-tags">
+              
+                <a href="/tags/java" class="tag">#java</a>
+              
+                <a href="/tags/design-patterns" class="tag">#design patterns</a>
+              
+                <a href="/tags/oop" class="tag">#oop</a>
+              
+            </div>
+          
+
+          
+          <div class="post-meta">
+            <span>Nguyễn Ngọc Hưng</span>
+            <span>2025-10-06</span>
+            <a href="http://localhost:1313/blog/design-patterns-java/" class="read-more">Đọc tiếp</a>
+          </div>
+        </div>
+      </article>
+    
+      <article class="post-card" data-category="javascript">
+        <a class="post-link" href="http://localhost:1313/blog/async-await-js/">
+          
+            
+
+
+
+
+
+
+
+
+
+  
+  <img src="https://images.unsplash.com/photo-1518773553398-650c184e0bb3?ixlib=rb-4.0.3&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=80" class="post-image" alt="Es6">
+
+          
+        </a>
+
+        <div class="post-content">
+          
+          
+            <span class="category">JAVASCRIPT</span>
+          
+
+          
+          <h2 class="post-title">Hiểu về Async/Await trong JavaScript</h2>
+
+          
+          <p class="post-summary">
+            Tìm hiểu cách sử dụng async/await để xử lý các tác vụ bất đồng bộ trong JavaScript một cách dễ dàng và hiệu quả.
+          </p>
+
+          
+          
+            <div class="post-tags">
+              
+                <a href="/tags/javascript" class="tag">#javascript</a>
+              
+                <a href="/tags/async" class="tag">#async</a>
+              
+                <a href="/tags/await" class="tag">#await</a>
+              
+                <a href="/tags/promise" class="tag">#promise</a>
+              
+            </div>
+          
+
+          
+          <div class="post-meta">
+            <span>Nguyễn Ngọc Hưng</span>
+            <span>2025-10-06</span>
+            <a href="http://localhost:1313/blog/async-await-js/" class="read-more">Đọc tiếp</a>
+          </div>
+        </div>
+      </article>
+    
+      <article class="post-card" data-category="javascript">
+        <a class="post-link" href="http://localhost:1313/blog/closures-js/">
+          
+            
+
+
+
+
+
+
+
+
+
+  
+  <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?ixlib=rb-4.0.3&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=80" class="post-image" alt="Es6">
+
+          
+        </a>
+
+        <div class="post-content">
+          
+          
+            <span class="category">JAVASCRIPT</span>
+          
+
+          
+          <h2 class="post-title">Hiểu về Closures trong JavaScript</h2>
+
+          
+          <p class="post-summary">
+            Tìm hiểu về closures trong JavaScript, cách chúng hoạt động và ứng dụng thực tế.
+          </p>
+
+          
+          
+            <div class="post-tags">
+              
+                <a href="/tags/javascript" class="tag">#javascript</a>
+              
+                <a href="/tags/closures" class="tag">#closures</a>
+              
+                <a href="/tags/scope" class="tag">#scope</a>
+              
+            </div>
+          
+
+          
+          <div class="post-meta">
+            <span>Nguyễn Ngọc Hưng</span>
+            <span>2025-10-06</span>
+            <a href="http://localhost:1313/blog/closures-js/" class="read-more">Đọc tiếp</a>
+          </div>
+        </div>
+      </article>
+    
+      <article class="post-card" data-category="java">
+        <a class="post-link" href="http://localhost:1313/blog/multithreading-java/">
+          
+            
+
+
+
+
+
+
+
+
+
+  
+  <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=80" class="post-image" alt="Es6">
+
+          
+        </a>
+
+        <div class="post-content">
+          
+          
+            <span class="category">JAVA</span>
+          
+
+          
+          <h2 class="post-title">Lập Trình Đa Luồng trong Java</h2>
+
+          
+          <p class="post-summary">
+            Tìm hiểu về lập trình đa luồng trong Java và cách sử dụng các công cụ để quản lý đồng thời.
+          </p>
+
+          
+          
+            <div class="post-tags">
+              
+                <a href="/tags/java" class="tag">#java</a>
+              
+                <a href="/tags/multithreading" class="tag">#multithreading</a>
+              
+                <a href="/tags/concurrency" class="tag">#concurrency</a>
+              
+            </div>
+          
+
+          
+          <div class="post-meta">
+            <span>Nguyễn Ngọc Hưng</span>
+            <span>2025-10-06</span>
+            <a href="http://localhost:1313/blog/multithreading-java/" class="read-more">Đọc tiếp</a>
+          </div>
+        </div>
+      </article>
+    
+      <article class="post-card" data-category="javascript">
+        <a class="post-link" href="http://localhost:1313/blog/dom-js/">
+          
+            
+
+
+
+
+
+
+
+
+
+  
+  <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?ixlib=rb-4.0.3&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=80" class="post-image" alt="Es6">
+
+          
+        </a>
+
+        <div class="post-content">
+          
+          
+            <span class="category">JAVASCRIPT</span>
+          
+
+          
+          <h2 class="post-title">Thao Tác với DOM trong JavaScript</h2>
+
+          
+          <p class="post-summary">
+            Tìm hiểu về Document Object Model (DOM) và cách sử dụng JavaScript để thao tác với các phần tử HTML trên trang web.
+          </p>
+
+          
+          
+            <div class="post-tags">
+              
+                <a href="/tags/javascript" class="tag">#javascript</a>
+              
+                <a href="/tags/dom" class="tag">#dom</a>
+              
+                <a href="/tags/web-development" class="tag">#web development</a>
+              
+            </div>
+          
+
+          
+          <div class="post-meta">
+            <span>Nguyễn Ngọc Hưng</span>
+            <span>2025-10-06</span>
+            <a href="http://localhost:1313/blog/dom-js/" class="read-more">Đọc tiếp</a>
+          </div>
+        </div>
+      </article>
+    
+      <article class="post-card" data-category="javascript">
+        <a class="post-link" href="http://localhost:1313/blog/es6-js/">
+          
+            
+
+
+
+
+
+
+
+
+
+  
+  <img src="https://images.unsplash.com/photo-1518773553398-650c184e0bb3?ixlib=rb-4.0.3&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=80" class="post-image" alt="Es6">
+
+          
+        </a>
+
+        <div class="post-content">
+          
+          
+            <span class="category">JAVASCRIPT</span>
+          
+
+          
+          <h2 class="post-title">Tổng Quan về ES6 trong JavaScript</h2>
+
+          
+          <p class="post-summary">
+            Khám phá các tính năng mới của ES6 (ECMAScript 2015) và cách chúng cải thiện trải nghiệm lập trình JavaScript.
+          </p>
+
+          
+          
+            <div class="post-tags">
+              
+                <a href="/tags/javascript" class="tag">#javascript</a>
+              
+                <a href="/tags/es6" class="tag">#es6</a>
+              
+                <a href="/tags/ecmascript" class="tag">#ecmascript</a>
+              
+            </div>
+          
+
+          
+          <div class="post-meta">
+            <span>Nguyễn Ngọc Hưng</span>
+            <span>2025-10-06</span>
+            <a href="http://localhost:1313/blog/es6-js/" class="read-more">Đọc tiếp</a>
+          </div>
+        </div>
+      </article>
+    
+      <article class="post-card" data-category="java">
+        <a class="post-link" href="http://localhost:1313/blog/exception-handling-java/">
+          
+            
+
+
+
+
+
+
+
+
+
+  
+  <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=80" class="post-image" alt="Es6">
+
+          
+        </a>
+
+        <div class="post-content">
+          
+          
+            <span class="category">JAVA</span>
+          
+
+          
+          <h2 class="post-title">Xử Lý Ngoại Lệ trong Java</h2>
+
+          
+          <p class="post-summary">
+            Tìm hiểu về cơ chế xử lý ngoại lệ trong Java và cách sử dụng các khối try-catch để quản lý lỗi hiệu quả.
+          </p>
+
+          
+          
+            <div class="post-tags">
+              
+                <a href="/tags/java" class="tag">#java</a>
+              
+                <a href="/tags/exception-handling" class="tag">#exception handling</a>
+              
+                <a href="/tags/error-handling" class="tag">#error handling</a>
+              
+            </div>
+          
+
+          
+          <div class="post-meta">
+            <span>Nguyễn Ngọc Hưng</span>
+            <span>2025-10-06</span>
+            <a href="http://localhost:1313/blog/exception-handling-java/" class="read-more">Đọc tiếp</a>
+          </div>
+        </div>
+      </article>
+    
+      <article class="post-card" data-category="java">
+        <a class="post-link" href="http://localhost:1313/blog/gioi-thieu-ve-java/">
+          
+            
+
+
+
+
+
+
+
+
+
+  
+  <img src="https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?ixlib=rb-4.0.3&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=80" class="post-image" alt="Es6">
+
+          
+        </a>
+
+        <div class="post-content">
+          
+          
+            <span class="category">JAVA</span>
+          
+
+          
+          <h2 class="post-title">Giới thiệu về Java và lập trình hướng đối tượng</h2>
+
+          
+          <p class="post-summary">
+            Tìm hiểu những khái niệm cơ bản về Java và các nguyên lý lập trình hướng đối tượng trong Java.
+          </p>
+
+          
+          
+            <div class="post-tags">
+              
+                <a href="/tags/java" class="tag">#java</a>
+              
+                <a href="/tags/oop" class="tag">#oop</a>
+              
+                <a href="/tags/c%C6%A1-b%E1%BA%A3n" class="tag">#cơ bản</a>
+              
+            </div>
+          
+
+          
+          <div class="post-meta">
+            <span>Nguyễn Ngọc Hưng</span>
+            <span>2025-10-04</span>
+            <a href="http://localhost:1313/blog/gioi-thieu-ve-java/" class="read-more">Đọc tiếp</a>
+          </div>
+        </div>
+      </article>
+    
+      <article class="post-card" data-category="java">
+        <a class="post-link" href="http://localhost:1313/blog/collections-java/">
+          
+            
+
+
+
+
+
+
+
+
+
+  
+  <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=80" class="post-image" alt="Es6">
+
+          
+        </a>
+
+        <div class="post-content">
+          
+          
+            <span class="category">JAVA</span>
+          
+
+          
+          <h2 class="post-title">Làm việc với Collections Framework trong Java</h2>
+
+          
+          <p class="post-summary">
+            Hướng dẫn chi tiết cách sử dụng Collections Framework để quản lý dữ liệu hiệu quả trong Java.
+          </p>
+
+          
+          
+            <div class="post-tags">
+              
+                <a href="/tags/java" class="tag">#java</a>
+              
+                <a href="/tags/collections" class="tag">#collections</a>
+              
+                <a href="/tags/data-structure" class="tag">#data-structure</a>
+              
+            </div>
+          
+
+          
+          <div class="post-meta">
+            <span>Nguyễn Ngọc Hưng</span>
+            <span>2024-01-06</span>
+            <a href="http://localhost:1313/blog/collections-java/" class="read-more">Đọc tiếp</a>
+          </div>
+        </div>
+      </article>
+    
+  </div>
+</section>
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const searchInput = document.getElementById("search-input");
+  const posts = document.querySelectorAll(".post-card");
+  const categoryButtons = document.querySelectorAll(".category-btn");
+
+  function filterPosts() {
+    const query = searchInput.value.toLowerCase();
+    const activeCategoryBtn = document.querySelector(".category-btn.active");
+    const activeCategory = activeCategoryBtn ? activeCategoryBtn.dataset.category : "all";
+
+    posts.forEach(post => {
+      const title = post.querySelector(".post-title").textContent.toLowerCase();
+      const summary = post.querySelector(".post-summary")?.textContent.toLowerCase() || "";
+      const tags = Array.from(post.querySelectorAll(".post-tags .tag")).map(t => t.textContent.toLowerCase()).join(" ");
+      const categories = (post.dataset.category || "").toLowerCase();
+
+      const matchQuery = title.includes(query) || summary.includes(query) || tags.includes(query) || categories.includes(query);
+      const matchCategory = (activeCategory === "all") || (categories.includes(activeCategory));
+
+      post.style.display = (matchQuery && matchCategory) ? "" : "none";
+    });
+  }
+
+  searchInput.addEventListener("input", filterPosts);
+  categoryButtons.forEach(btn => {
+    btn.addEventListener("click", () => {
+      categoryButtons.forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+      filterPosts();
+    });
+  });
+});
+</script>
+
+
+<style>
+.blog-list { text-align: center; color: #fff; padding: 40px 0; }
+.blog-title { font-size: 3rem; color: #d8ff4d; margin-bottom: 10px; }
+.blog-description { font-size: 1.2rem; margin-bottom: 30px; color: #cfcfcf; }
+.filter { display: flex; justify-content: center; align-items: center; gap: 10px; margin-bottom: 30px; flex-wrap: wrap; }
+.search-input { padding: 10px 15px; width: 300px; border-radius: 8px; border: 1px solid #555; background: #1c1c1c; color: #fff; }
+.category-btn { background: #2e2e2e; color: #ddd; border: none; border-radius: 8px; padding: 10px 20px; cursor: pointer; transition: 0.3s; }
+.category-btn:hover, .category-btn.active { background: #d8ff4d; color: #000; }
+.posts-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin-top: 30px; }
+.post-card { background: #202020; border-radius: 12px; overflow: hidden; text-align: left; transition: 0.3s; }
+.post-card:hover { transform: translateY(-5px); }
+.post-image { width: 100%; height: 180px; object-fit: cover; }
+.no-image { height: 180px; background: #333; display: flex; align-items: center; justify-content: center; color: #aaa; }
+.post-content { padding: 15px; }
+.category { display: inline-block; background: #d8ff4d; color: #000; font-weight: bold; padding: 4px 10px; border-radius: 6px; font-size: 0.8rem; }
+.post-title { font-size: 1.3rem; margin: 10px 0; color: #fff; }
+.post-summary { color: #bbb; font-size: 0.95rem; margin-bottom: 10px; }
+.post-tags { margin-bottom: 8px; }
+.tag { display: inline-block; background: #333; color: #ccc; padding: 3px 8px; margin-right: 5px; border-radius: 5px; text-decoration: none; font-size: 0.85rem; transition: 0.2s; }
+.tag:hover { background: #d8ff4d; color: #000; }
+.post-meta { font-size: 0.85rem; color: #aaa; display: flex; justify-content: space-between; align-items: center; }
+.read-more { color: #d8ff4d; text-decoration: none; }
+.read-more:hover { text-decoration: underline; }
+</style>
+
+  </main>
+    <footer class="footer-section footer-padding bg-dars border-top border-gray">
+    <div class="footer-container container-max mx-center px-standard">
+      <div class="footer-grid">
+        <div class="footer-item">
+          <h3 class="footer-logo text-yellow">&lt;/&gt; DevBlog</h3>
+          <p class="footer-desc text-gray">Chia sẻ kiến thức lập trình Java và JavaScript. Hỗ trợ phát triển ứng dụng web hiện đại.</p>
+          <div class="social-links">
+            <a href="https://github.com/yourusername" target="_blank" class="social-icon"><i class="fab fa-github"></i></a>
+            <a href="https://linkedin.com/in/yourusername" target="_blank" class="social-icon"><i class="fab fa-linkedin"></i></a>
+            <a href="mailto:nguyenvana@example.com" class="social-icon"><i class="fas fa-envelope"></i></a>
+          </div>
+        </div>
+        <div class="footer-item">
+          <h3 class="footer-title text-yellow">Liên kết nhanh</h3>
+          <ul class="footer-links">
+            <li><a href="/" class="footer-link">Trang chủ</a></li>
+            <li><a href="/blog/" class="footer-link">Blog</a></li>
+            <li><a href="/about/" class="footer-link">Giới thiệu</a></li>
+            <li><a href="/contact/" class="footer-link">Liên hệ</a></li>
+          </ul>
+        </div>
+        <div class="footer-item">
+          <h3 class="footer-title text-yellow">Thông tin liên hệ</h3>
+          <p class="footer-contact text-gray">Email: h.com.vha@gmail.com</p>
+          <p class="footer-contact text-gray">Điện thoại: +84 365 885 628</p>
+          <p class="footer-contact text-gray">Địa chỉ: Hồ Chí Minh, Việt Nam</p>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright-wrapper">
+      <p class="footer-copyright-left text-gray">&copy; 2025 DevBlog. Tất cả quyền được bảo lưu.</p>
+      <p class="footer-copyright-right text-gray">Được xây dựng với ❤️ bởi Nguyễn Ngọc Hưng</p>
+    </div>
+  </footer>
+  
+<script src="http://localhost:1313/js/custom.js" defer></script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  console.log("✅ Custom scripts loaded.");
+
+  
+  if (window.lucide) {
+    lucide.createIcons();
+  } else {
+    console.warn("Lucide icons library not loaded.");
+  }
+
+  
+  const header = document.querySelector('header');
+  if (header) {
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 20) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    });
+  }
+
+  
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        e.preventDefault();
+        window.scrollTo({
+          top: target.offsetTop - 80,
+          behavior: 'smooth'
+        });
+      }
+    });
+  });
+
+  
+  const buttons = document.querySelectorAll('.btn-primary, .btn-outline');
+  buttons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      btn.classList.add('clicked');
+      setTimeout(() => btn.classList.remove('clicked'), 250);
+    });
+  });
+});
+</script>
+
+
+</body>
+</html>

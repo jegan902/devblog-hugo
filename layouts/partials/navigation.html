@@ -1,0 +1,10 @@
+<nav class="bg-indigo-600 text-white p-4">
+  <div class="container mx-auto flex justify-between items-center">
+    <a href="/" class="text-2xl font-bold">DevBlog</a>
+    <ul class="flex space-x-6">
+      {{ range .Site.Menus.main }}
+        <li><a href="{{ .URL }}" class="hover:underline">{{ .Name }}</a></li>
+      {{ end }}
+    </ul>
+  </div>
+</nav>

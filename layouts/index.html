@@ -1,0 +1,143 @@
+{{ define "main" }}
+<main class="min-h-screen bg-[#0c0c0c] text-gray-100 pt-20">
+  <!-- 🌟 HERO SECTION -->
+  <section class="hero">
+  <div class="hero-content">
+    <h1>
+      Chào mừng đến <br>
+      với <br>
+      <span>{{ .Site.Title }}</span>
+    </h1>
+
+    <p>
+      {{ with .Site.Params.description }}
+        {{ range $index, $line := split . "|" }}
+          {{ if $index }}<br>{{ end }}{{ $line }}
+        {{ end }}
+      {{ else }}
+        Khám phá thế giới lập trình với các bài viết chi tiết về Java và JavaScript.<br>
+        Học hỏi, chia sẻ và phát triển kỹ năng lập trình của bạn.
+      {{ end }}
+    </p>
+
+      <div class="hero-buttons">
+        <a href="/blog" class="btn btn-primary">
+          Khám phá Blog
+          <i data-lucide="arrow-right"></i>
+        </a>
+        <a href="/about" class="btn btn-outline">
+          Tìm hiểu thêm
+          <i data-lucide="user"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+
+<!-- 📰 FEATURED POSTS -->
+<section class="featured-section">
+  <div class="container">
+    <div class="featured-header">
+      <h2>BÀI VIẾT NỔI BẬT</h2>
+      <p>Khám phá những bài viết mới nhất và phổ biến nhất về lập trình Java và JavaScript.</p>
+    </div>
+
+    <div class="featured-grid">
+      {{ $blog := where .Site.RegularPages "Type" "in" (slice "blog") }}
+      {{ range first 3 $blog }}
+      <article class="featured-card">
+        <a href="{{ .Permalink }}">
+          <img src="{{ with .Params.image }}{{ . | relURL }}{{ else }}/images/default.jpg{{ end }}" alt="{{ .Title }}" loading="lazy">
+        </a>
+
+        <div class="card-body">
+          <div class="card-meta">
+            <span class="tag">
+              {{ with .Params.categories }}{{ index . 0 | default "Java" }}{{ else }}Java{{ end }}
+            </span>
+            <span class="read-time">
+              {{ with .Params.readTime }}{{ . }}{{ else }}5 phút đọc{{ end }}
+            </span>
+          </div>
+
+          <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
+          <p>{{ with .Params.excerpt }}{{ . }}{{ else }}{{ .Summary }}{{ end }}</p>
+
+          <div class="card-footer">
+            <span class="author">{{ with .Params.author }}{{ . }}{{ else }}Nguyễn Văn A{{ end }}</span>
+            <a href="{{ .Permalink }}" class="read-more">
+              Đọc tiếp <i data-lucide="arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </article>
+      {{ end }}
+    </div>
+
+    <div class="view-all">
+      <a href="/blog" class="btn-outline">
+        Xem tất cả bài viết
+        <i data-lucide="book-open"></i>
+      </a>
+    </div>
+  </div>
+</section>
+
+
+<!-- 👨‍💻 ABOUT AUTHOR -->
+<section class="author-section author-padding bg-dars border-top border-gray">
+  <div class="author-container container-max mx-center px-standard grid md:grid-two gap-large items-center">
+    <div class="author-text">
+      <h2 class="author-title text-large font-bold text-yellow mb-medium">VỀ TÁC GIẢ</h2>
+      <p class="author-bio text-gray mb-medium">
+        {{ with .Site.Params.authorBio }}{{ . }}{{ else }}Tôi là một lập trình viên với kinh nghiệm cơ bản trong phát triển ứng dụng web. Đam mê với Java và JavaScript, tôi thích chia sẻ kiến thức và học hỏi từ cộng đồng.{{ end }}
+      </p>
+      <div class="author-info grid grid-two gap-medium mb-medium">
+        <div class="info-item">
+          <h4 class="info-label text-yellow font-semibold mb-small">Kinh nghiệm</h4>
+          <p class="info-value text-gray">{{ with .Site.Params.experience }}{{ . }}{{ else }}kinh nghiệm Cơ bản{{ end }}</p>
+        </div>
+        <div class="info-item">
+          <h4 class="info-label text-yellow font-semibold mb-small">Vị trí</h4>
+          <p class="info-value text-gray">{{ with .Site.Params.location }}{{ . }}{{ else }}Hồ Chí Minh, Việt Nam{{ end }}</p>
+        </div>
+      </div>
+      <a href="/about" class="author-button bg-yellow text-black px-standard py-small rounded-full font-semibold flex items-center gap-small w-fit hover:bg-yellow-hover transition-all">
+        Tìm hiểu thêm <i data-lucide="arrow-right" class="icon-size"></i>
+      </a>
+    </div>
+
+    <div class="author-image-container flex justify-center">
+      <div class="image-wrapper relative">
+        <img
+          src="{{ with .Site.Params.authorImage }}{{ . | relURL }}{{ else }}/images/author.jpg{{ end }}"
+          alt="{{ .Site.Params.author | default "Nguyễn Ngọc Hưng" }}"
+          class="author-image w-large h-large rounded-large object-cover border-dark-gray"
+        />
+        <div class="image-icon absolute bottom-offset right-offset w-medium h-medium bg-yellow text-black rounded-full flex items-center justify-center">
+          <i data-lucide="code" class="icon-size"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 🚀 CTA SECTION -->
+<section class="cta-section cta-padding bg-darks border-top border-gray text-center">
+  <div class="cta-container container-medium mx-center px-standard">
+    <h2 class="cta-title text-large font-bold text-yellow mb-medium">SẴN SÀNG BẮT ĐẦU?</h2>
+    <p class="cta-description text-gray mb-large">
+      Hãy cùng nhau khám phá thế giới lập trình và nâng cao kỹ năng của bạn qua những bài viết chi tiết và thực tế.
+    </p>
+    <div class="cta-buttons flex flex-col sm:flex-row gap-standard justify-center">
+      <a href="/blog" class="cta-button-primary bg-yellow text-black px-standard py-small rounded-large font-semibold flex items-center justify-center gap-small hover:bg-yellow-hover transition-all">
+        Bắt đầu đọc <i data-lucide="book-open" class="icon-size"></i>
+      </a>
+      <a href="/contact" class="cta-button-secondary border border-yellow text-yellow px-standard py-small rounded-large font-semibold flex items-center justify-center gap-small hover:bg-yellow hover:text-black transition-all">
+        Liên hệ với tôi <i data-lucide="arrow-right" class="icon-size"></i>
+      </a>
+    </div>
+  </div>
+</section>
+</main>
+{{ end }}

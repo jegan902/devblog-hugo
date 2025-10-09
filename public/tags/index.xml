@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on DevBlog</title>
+    <link>http://localhost:1313/tags/</link>
+    <description>Recent content in Tags on DevBlog</description>
+    <generator>Hugo</generator>
+    <language>vi</language>
+    <lastBuildDate>Mon, 06 Oct 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Async</title>
+      <link>http://localhost:1313/tags/async/</link>
+      <pubDate>Mon, 06 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/async/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Await</title>
+      <link>http://localhost:1313/tags/await/</link>
+      <pubDate>Mon, 06 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/await/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Closures</title>
+      <link>http://localhost:1313/tags/closures/</link>
+      <pubDate>Mon, 06 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/closures/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Concurrency</title>
+      <link>http://localhost:1313/tags/concurrency/</link>
+      <pubDate>Mon, 06 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/concurrency/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Design Patterns</title>
+      <link>http://localhost:1313/tags/design-patterns/</link>
+      <pubDate>Mon, 06 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/design-patterns/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Dom</title>
+      <link>http://localhost:1313/tags/dom/</link>
+      <pubDate>Mon, 06 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/dom/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Ecmascript</title>
+      <link>http://localhost:1313/tags/ecmascript/</link>
+      <pubDate>Mon, 06 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/ecmascript/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Error Handling</title>
+      <link>http://localhost:1313/tags/error-handling/</link>
+      <pubDate>Mon, 06 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/error-handling/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Es6</title>
+      <link>http://localhost:1313/tags/es6/</link>
+      <pubDate>Mon, 06 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/es6/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Exception Handling</title>
+      <link>http://localhost:1313/tags/exception-handling/</link>
+      <pubDate>Mon, 06 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/exception-handling/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Java</title>
+      <link>http://localhost:1313/tags/java/</link>
+      <pubDate>Mon, 06 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/java/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Javascript</title>
+      <link>http://localhost:1313/tags/javascript/</link>
+      <pubDate>Mon, 06 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/javascript/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Multithreading</title>
+      <link>http://localhost:1313/tags/multithreading/</link>
+      <pubDate>Mon, 06 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/multithreading/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Oop</title>
+      <link>http://localhost:1313/tags/oop/</link>
+      <pubDate>Mon, 06 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/oop/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Promise</title>
+      <link>http://localhost:1313/tags/promise/</link>
+      <pubDate>Mon, 06 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/promise/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Scope</title>
+      <link>http://localhost:1313/tags/scope/</link>
+      <pubDate>Mon, 06 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/scope/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Web Development</title>
+      <link>http://localhost:1313/tags/web-development/</link>
+      <pubDate>Mon, 06 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/web-development/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Cơ Bản</title>
+      <link>http://localhost:1313/tags/c%C6%A1-b%E1%BA%A3n/</link>
+      <pubDate>Sat, 04 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/c%C6%A1-b%E1%BA%A3n/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Collections</title>
+      <link>http://localhost:1313/tags/collections/</link>
+      <pubDate>Sat, 06 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/collections/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Data-Structure</title>
+      <link>http://localhost:1313/tags/data-structure/</link>
+      <pubDate>Sat, 06 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/data-structure/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

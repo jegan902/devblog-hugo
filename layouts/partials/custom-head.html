@@ -1,0 +1,44 @@
+<!-- Custom Head Partial -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>{{ if .Title }}{{ .Title }} - {{ end }}{{ .Site.Title }}</title>
+<meta name="author" content="{{ .Site.Params.author }}">
+<meta name="description" content="{{ with .Params.excerpt }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+
+<!-- Open Graph -->
+<meta property="og:title" content="{{ if .Title }}{{ .Title }} - {{ end }}{{ .Site.Title }}">
+<meta property="og:description" content="{{ with .Params.excerpt }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+<meta property="og:type" content="website">
+<meta property="og:url" content="{{ .Permalink }}">
+{{ with .Params.image }}
+<meta property="og:image" content="{{ . }}">
+{{ else }}
+<meta property="og:image" content="{{ .Site.BaseURL }}images/og-default.png">
+{{ end }}
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ if .Title }}{{ .Title }} - {{ end }}{{ .Site.Title }}">
+<meta name="twitter:description" content="{{ with .Params.excerpt }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+{{ with .Params.image }}
+<meta name="twitter:image" content="{{ . }}">
+{{ else }}
+<meta name="twitter:image" content="{{ .Site.BaseURL }}images/og-default.png">
+{{ end }}
+
+<!-- Favicon -->
+<link rel="icon" href="/favicon.ico" type="image/x-icon">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+<!-- Fonts & Icons -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js" defer></script>
+
+<!-- Styles -->
+<link rel="stylesheet" href="{{ .Site.BaseURL }}css/style.css">
+
+<!-- Scripts -->
+<script src="{{ .Site.BaseURL }}js/script.js" defer></script>

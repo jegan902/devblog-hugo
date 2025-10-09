@@ -1,0 +1,61 @@
+{{/* Check for required arguments (src): */}}
+{{ if not .src }}
+  {{ errorf "Image Optimization: the partial 'utilities/image' is missing the 'src' argument." }}
+{{ end }}
+
+{{/* Handle external URLs or local resources */}}
+{{ $src := .src }}
+{{ $class := .class | default "w-full h-full object-cover object-center" }}
+{{ $alt := .alt | default "Image" }}
+{{ $page := .page }}
+
+{{ if or (hasPrefix $src "http://") (hasPrefix $src "https://") }}
+  {{/* Handle external URLs */}}
+  <img src="{{ $src | safeURL }}" class="{{ $class }}" alt="{{ $alt }}">
+{{ else }}
+  {{/* Get resource from page bundle or assets folder: */}}
+  {{ $resource := dict }}
+  {{ with resources.Get $src }}
+    {{ $resource = . }}
+  {{ else }}
+    {{ with $page.Resources.GetMatch (printf "*%s*" $src) }}
+      {{ $resource = . }}
+    {{ end }}
+  {{ end }}
+
+  {{ if $resource }}
+    {{/* Configure the image widths to be generated: */}}
+    {{ $breakpoints := (slice 320 480 768 1024 1280 1600 1920) }}
+
+    {{/* Generate the images: */}}
+    {{ $images := slice }}
+    {{ range $breakpoints }}
+      {{ if (ge $resource.Width .) }}
+        {{ $opts := (printf "%dx webp" .) }}
+        {{ $image := $resource.Resize $opts }}
+        {{ $images = append $images (slice $image) }}
+      {{ end }}
+    {{ end }}
+
+    {{/* Build the srcset: */}}
+    {{ $srcset := slice }}
+    {{ range $images }}
+      {{ $srcset = append $srcset (slice (printf "%s %dw" .Permalink .Width)) }}
+    {{ end }}
+    {{ $srcset = delimit $srcset ", " }}
+
+    {{/* Return the img element: */}}
+    <img
+      src="{{ $resource.Permalink }}"
+      width="{{ $resource.Width }}"
+      height="{{ $resource.Height }}"
+      {{ with $srcset }}srcset="{{ . }}"{{ end }}
+      {{ with .sizes }}sizes="{{ . }}"{{ end }}
+      class="{{ $class }}"
+      alt="{{ $alt }}"
+    />
+  {{ else }}
+    {{ warnf "Image Optimization: the image '%s' has not been found. (%s)" $src $page }}
+    <div class="w-full h-full bg-gray-800 flex items-center justify-center text-gray-500 text-sm">No Image Available</div>
+  {{ end }}
+{{ end }}

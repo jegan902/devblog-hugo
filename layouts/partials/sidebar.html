@@ -1,0 +1,55 @@
+<aside class="w-64 bg-gray-50 border-l border-gray-200 p-4">
+  <!-- Hồ sơ cá nhân -->
+  {{ with site.Data.profile }}
+  <div class="mb-6">
+    <h2 class="text-lg font-bold mb-2">👨‍💻 {{ .name }}</h2>
+    <p class="text-sm text-gray-600">{{ .bio }}</p>
+  </div>
+  {{ end }}
+
+  <!-- Danh mục -->
+  <div class="mb-6">
+    <h2 class="text-lg font-bold mb-2">📂 Danh mục</h2>
+    <ul class="space-y-1">
+      {{ range site.Data.categories }}
+        <li>
+          <a href="{{ "/categories/" | relLangURL }}{{ .slug }}" 
+             class="text-blue-600 hover:underline">
+            {{ .name }}
+          </a>
+        </li>
+      {{ end }}
+    </ul>
+  </div>
+
+  <!-- Tags -->
+  <div class="mb-6">
+    <h2 class="text-lg font-bold mb-2">🏷️ Thẻ</h2>
+    <div class="flex flex-wrap gap-2">
+      {{ range $name, $_ := site.Taxonomies.tags }}
+        <a href="{{ "/tags/" | relLangURL }}{{ $name | urlize }}"
+           class="px-2 py-1 bg-gray-200 rounded text-sm hover:bg-blue-300">
+          {{ $name }}
+        </a>
+      {{ end }}
+    </div>
+  </div>
+
+  <!-- Liên kết xã hội -->
+  {{ with site.Data.profile.social }}
+  <div class="mt-6">
+    <h2 class="text-lg font-bold mb-2">🌐 Kết nối</h2>
+    <ul class="space-y-1">
+      {{ with .github }}
+      <li><a href="{{ . }}" class="hover:text-blue-500">GitHub</a></li>
+      {{ end }}
+      {{ with .linkedin }}
+      <li><a href="{{ . }}" class="hover:text-blue-500">LinkedIn</a></li>
+      {{ end }}
+      {{ with .twitter }}
+      <li><a href="{{ . }}" class="hover:text-blue-500">Twitter</a></li>
+      {{ end }}
+    </ul>
+  </div>
+  {{ end }}
+</aside>

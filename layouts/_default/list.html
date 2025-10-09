@@ -1,0 +1,153 @@
+{{ define "main" }}
+<section class="blog-list">
+  <!-- Tiêu đề chính -->
+  <h1 class="blog-title">BLOG</h1>
+  <p class="blog-description">
+    Khám phá các bài viết chi tiết về Java và JavaScript. 
+    Tìm hiểu kiến thức lập trình từ cơ bản đến nâng cao.
+  </p>
+
+  <!-- Bộ lọc và tìm kiếm -->
+  <div class="filter">
+    {{/* Lấy danh sách tất cả bài viết loại "blog" */}}
+    {{ $posts := where .Site.RegularPages "Type" "blog" }}
+
+    {{/* Lọc bài viết theo category */}}
+    {{ $javaPosts := where $posts "Params.categories" "intersect" (slice "java") }}
+    {{ $jsPosts := where $posts "Params.categories" "intersect" (slice "javascript") }}
+
+    {{/* Tạo danh sách bài viết khác (không có hoặc không thuộc 2 loại trên) */}}
+    {{ $khacPosts := slice }}
+    {{ range $p := $posts }}
+      {{ $cats := default (slice) $p.Params.categories }}
+      {{ if not (or (in $cats "java") (in $cats "javascript")) }}
+        {{ $khacPosts = $khacPosts | append $p }}
+      {{ end }}
+    {{ end }}
+
+    <!-- Ô tìm kiếm -->
+    <input type="text" id="search-input" placeholder="Tìm kiếm bài viết..." class="search-input">
+
+    <!-- Nút bộ lọc -->
+    <button class="category-btn active" data-category="all">
+      TẤT CẢ ({{ len $posts }})
+    </button>
+    <button class="category-btn" data-category="java">
+      JAVA ({{ len $javaPosts }})
+    </button>
+    <button class="category-btn" data-category="javascript">
+      JAVASCRIPT ({{ len $jsPosts }})
+    </button>
+  </div>
+
+  <!-- Danh sách bài viết -->
+  <div class="posts-grid">
+    {{ range $posts }}
+      <article class="post-card" data-category="{{ with .Params.categories }}{{ delimit . " " | lower }}{{ else }}khac{{ end }}">
+        <a class="post-link" href="{{ .Permalink }}">
+          {{ with .Params.image }}
+            {{ partial "utilities/image" (dict "src" . "class" "post-image" "alt" $.Title "page" $.Page) }}
+          {{ else }}
+            <div class="no-image">No Image</div>
+          {{ end }}
+        </a>
+
+        <div class="post-content">
+          <!-- Hiển thị category -->
+          {{ with .Params.categories }}
+            <span class="category">{{ range first 1 . }}{{ . | upper }}{{ end }}</span>
+          {{ else }}
+            <span class="category khac">KHÁC</span>
+          {{ end }}
+
+          <!-- Tiêu đề -->
+          <h2 class="post-title">{{ .Title }}</h2>
+
+          <!-- Tóm tắt -->
+          <p class="post-summary">
+            {{ with .Params.excerpt }}{{ . }}{{ else }}{{ .Summary }}{{ end }}
+          </p>
+
+          <!-- Tags -->
+          {{ with .Params.tags }}
+            <div class="post-tags">
+              {{ range . }}
+                <a href="/tags/{{ . | urlize }}" class="tag">#{{ . }}</a>
+              {{ end }}
+            </div>
+          {{ end }}
+
+          <!-- Metadata -->
+          <div class="post-meta">
+            <span>{{ .Params.author | default "Anonymous" }}</span>
+            <span>{{ .Date.Format "2006-01-02" }}</span>
+            <a href="{{ .Permalink }}" class="read-more">Đọc tiếp</a>
+          </div>
+        </div>
+      </article>
+    {{ end }}
+  </div>
+</section>
+
+<!-- Script lọc & tìm kiếm -->
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const searchInput = document.getElementById("search-input");
+  const posts = document.querySelectorAll(".post-card");
+  const categoryButtons = document.querySelectorAll(".category-btn");
+
+  function filterPosts() {
+    const query = searchInput.value.toLowerCase();
+    const activeCategoryBtn = document.querySelector(".category-btn.active");
+    const activeCategory = activeCategoryBtn ? activeCategoryBtn.dataset.category : "all";
+
+    posts.forEach(post => {
+      const title = post.querySelector(".post-title").textContent.toLowerCase();
+      const summary = post.querySelector(".post-summary")?.textContent.toLowerCase() || "";
+      const tags = Array.from(post.querySelectorAll(".post-tags .tag")).map(t => t.textContent.toLowerCase()).join(" ");
+      const categories = (post.dataset.category || "").toLowerCase();
+
+      const matchQuery = title.includes(query) || summary.includes(query) || tags.includes(query) || categories.includes(query);
+      const matchCategory = (activeCategory === "all") || (categories.includes(activeCategory));
+
+      post.style.display = (matchQuery && matchCategory) ? "" : "none";
+    });
+  }
+
+  searchInput.addEventListener("input", filterPosts);
+  categoryButtons.forEach(btn => {
+    btn.addEventListener("click", () => {
+      categoryButtons.forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+      filterPosts();
+    });
+  });
+});
+</script>
+
+<!-- CSS -->
+<style>
+.blog-list { text-align: center; color: #fff; padding: 40px 0; }
+.blog-title { font-size: 3rem; color: #d8ff4d; margin-bottom: 10px; }
+.blog-description { font-size: 1.2rem; margin-bottom: 30px; color: #cfcfcf; }
+.filter { display: flex; justify-content: center; align-items: center; gap: 10px; margin-bottom: 30px; flex-wrap: wrap; }
+.search-input { padding: 10px 15px; width: 300px; border-radius: 8px; border: 1px solid #555; background: #1c1c1c; color: #fff; }
+.category-btn { background: #2e2e2e; color: #ddd; border: none; border-radius: 8px; padding: 10px 20px; cursor: pointer; transition: 0.3s; }
+.category-btn:hover, .category-btn.active { background: #d8ff4d; color: #000; }
+.posts-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin-top: 30px; }
+.post-card { background: #202020; border-radius: 12px; overflow: hidden; text-align: left; transition: 0.3s; }
+.post-card:hover { transform: translateY(-5px); }
+.post-image { width: 100%; height: 180px; object-fit: cover; }
+.no-image { height: 180px; background: #333; display: flex; align-items: center; justify-content: center; color: #aaa; }
+.post-content { padding: 15px; }
+.category { display: inline-block; background: #d8ff4d; color: #000; font-weight: bold; padding: 4px 10px; border-radius: 6px; font-size: 0.8rem; }
+.post-title { font-size: 1.3rem; margin: 10px 0; color: #fff; }
+.post-summary { color: #bbb; font-size: 0.95rem; margin-bottom: 10px; }
+.post-tags { margin-bottom: 8px; }
+.tag { display: inline-block; background: #333; color: #ccc; padding: 3px 8px; margin-right: 5px; border-radius: 5px; text-decoration: none; font-size: 0.85rem; transition: 0.2s; }
+.tag:hover { background: #d8ff4d; color: #000; }
+.post-meta { font-size: 0.85rem; color: #aaa; display: flex; justify-content: space-between; align-items: center; }
+.read-more { color: #d8ff4d; text-decoration: none; }
+.read-more:hover { text-decoration: underline; }
+</style>
+{{ end }}

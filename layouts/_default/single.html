@@ -1,0 +1,675 @@
+{{ define "main" }}
+<article class="post-detail">
+  <!-- Hero Section with Featured Image -->
+  {{ if .Params.image }}
+  <header class="post-hero">
+    <div class="hero-overlay">
+      <div class="hero-content">
+        <h1 class="post-title">{{ .Title }}</h1>
+        <div class="post-meta">
+          <span class="meta-author">👤 {{ .Params.author | default "Nguyễn Ngọc Hưng" }}</span>
+          <span class="meta-date">📅 {{ .Date.Format "02/01/2006" }}</span>
+          {{ if .Params.tags }}
+            <div class="post-tags">
+              {{ range .Params.tags }}
+                <span class="tag">#{{ . }}</span>
+              {{ end }}
+            </div>
+          {{ end }}
+        </div>
+      </div>
+    </div>
+    <img src="{{ .Params.image | absURL }}" alt="{{ .Title }}" class="hero-image" loading="lazy">
+  </header>
+  {{ else }}
+  <!-- Fallback Header without Image -->
+  <header class="post-header">
+    <h1 class="post-title">{{ .Title }}</h1>
+    <div class="post-meta">
+      <span class="meta-author">👤 {{ .Params.author | default "Nguyễn Ngọc Hưng" }}</span>
+      <span class="meta-date">📅 {{ .Date.Format "02/01/2006" }}</span>
+      {{ if .Params.tags }}
+        <div class="post-tags">
+          {{ range .Params.tags }}
+            <span class="tag">#{{ . }}</span>
+          {{ end }}
+        </div>
+      {{ end }}
+    </div>
+  </header>
+  {{ end }}
+
+  <div class="post-content">
+    {{ .Content }}
+  </div>
+
+  <footer class="post-footer">
+
+    <div class="related-posts">
+      <h2>BÀI VIẾT LIÊN QUAN</h2>
+   <div class="featured-grid">
+      {{ $blog := where .Site.RegularPages "Type" "in" (slice "blog") }}
+      {{ range first 3 $blog }}
+      <article class="featured-card">
+        <a href="{{ .Permalink }}">
+          <img src="{{ with .Params.image }}{{ . | relURL }}{{ else }}/images/default.jpg{{ end }}" alt="{{ .Title }}" loading="lazy">
+        </a>
+
+        <div class="card-body">
+          <div class="card-meta">
+            <span class="tag">
+              {{ with .Params.categories }}{{ index . 0 | default "Java" }}{{ else }}Java{{ end }}
+            </span>
+            <span class="read-time">
+              {{ with .Params.readTime }}{{ . }}{{ else }}5 phút đọc{{ end }}
+            </span>
+          </div>
+
+          <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
+          <p>{{ with .Params.excerpt }}{{ . }}{{ else }}{{ .Summary }}{{ end }}</p>
+
+          <div class="card-footer">
+            <span class="author">{{ with .Params.author }}{{ . }}{{ else }}Nguyễn Văn A{{ end }}</span>
+            <a href="{{ .Permalink }}" class="read-more">
+              Đọc tiếp <i data-lucide="arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </article>
+      {{ end }}
+    </div>
+    </div>
+    <a href="/blog/" class="btn secondary">← Quay lại Blog</a>
+  </footer>
+</article>
+
+<style>
+/* ===== POST DETAIL STYLING (Enhanced Dark Theme + Hero Image) ===== */
+.post-detail {
+  max-width: 1200px; /* Tăng chiều rộng tối đa để hỗ trợ 3 thẻ */
+  margin: 0 auto;
+  background: linear-gradient(135deg, #000000 0%, #111111 50%, #1a1a1a 100%);
+  color: #fff;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+.post-hero {
+  position: relative;
+  width: 100%;
+  height: 60vh;
+  min-height: 400px;
+  margin-bottom: 40px;
+  opacity: 0;
+  transform: scale(0.95);
+  animation: zoomIn 1s ease forwards;
+}
+@keyframes zoomIn {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(0,0,0,0.7) 0%, rgba(26,26,46,0.8) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  z-index: 2;
+}
+.hero-content {
+  max-width: 800px;
+  padding: 0 20px;
+  animation: fadeInUp 0.8s ease 0.3s forwards;
+  opacity: 0;
+  transform: translateY(20px);
+}
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.hero-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+  filter: brightness(0.6) contrast(1.1);
+  transition: filter 0.5s ease;
+}
+.post-hero:hover .hero-image {
+  filter: brightness(0.5) contrast(1.2);
+}
+.post-title {
+  font-size: 3.2rem;
+  background: linear-gradient(135deg, #d8ff4d 0%, #a8e02d 50%, #8fd12d 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 20px;
+  font-weight: 800;
+  letter-spacing: -0.4px;
+  text-shadow: 0 0 20px rgba(216, 255, 77, 0.3);
+  line-height: 1.2;
+}
+.post-header .post-title {
+  font-size: 2.8rem;
+  text-shadow: 0 0 10px rgba(216, 255, 77, 0.2);
+}
+.post-meta {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+  flex-wrap: wrap;
+  color: #e0e0e0;
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+}
+.meta-author, .meta-date {
+  background: linear-gradient(135deg, rgba(216, 255, 77, 0.1) 0%, rgba(168, 224, 45, 0.05) 100%);
+  padding: 8px 16px;
+  border-radius: 25px;
+  border: 1px solid rgba(216, 255, 77, 0.3);
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+.meta-author:hover, .meta-date:hover {
+  box-shadow: 0 5px 15px rgba(216, 255, 77, 0.2);
+  transform: translateY(-2px);
+}
+.post-tags {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 15px;
+}
+.tag {
+  background: linear-gradient(135deg, rgba(216, 255, 77, 0.15) 0%, rgba(168, 224, 45, 0.1) 100%);
+  color: #d8ff4d;
+  padding: 6px 14px;
+  border-radius: 20px;
+  border: 1px solid rgba(216, 255, 77, 0.4);
+  font-size: 0.95rem;
+  text-decoration: none;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  cursor: pointer;
+}
+.tag:hover {
+  background: linear-gradient(135deg, #d8ff4d 0%, #a8e02d 100%);
+  color: #000;
+  transform: scale(1.05) translateY(-2px);
+  box-shadow: 0 5px 15px rgba(216, 255, 77, 0.3);
+}
+
+/* ===== POST CONTENT (Enhanced with Image Styling) ===== */
+.post-content {
+  line-height: 1.9;
+  font-size: 1.15rem;
+  color: #e0e0e0;
+  animation: fadeIn 0.6s ease 0.5s forwards;
+  opacity: 0;
+}
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+.post-content > * {
+  margin-bottom: 25px;
+}
+.post-content h1, .post-content h2, .post-content h3, .post-content h4 {
+  color: #d8ff4d;
+  margin-top: 35px;
+  margin-bottom: 18px;
+  font-weight: 700;
+  position: relative;
+}
+.post-content h1::after, .post-content h2::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 50px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #d8ff4d, transparent);
+}
+.post-content h1 { font-size: 2.4rem; }
+.post-content h2 { font-size: 2rem; }
+.post-content h3 { font-size: 1.6rem; }
+.post-content p {
+  margin-bottom: 25px;
+  text-align: justify;
+}
+.post-content strong {
+  color: #d8ff4d;
+  font-weight: 700;
+}
+.post-content blockquote {
+  background: linear-gradient(135deg, rgba(216, 255, 77, 0.05) 0%, rgba(168, 224, 45, 0.03) 100%);
+  border-left: 4px solid #d8ff4d;
+  padding: 20px 25px;
+  margin: 30px 0;
+  font-style: italic;
+  color: #ccc;
+  border-radius: 0 8px 8px 0;
+  box-shadow: 0 4px 15px rgba(216, 255, 77, 0.1);
+  position: relative;
+}
+.post-content blockquote::before {
+  content: '"';
+  font-size: 4rem;
+  color: #d8ff4d;
+  position: absolute;
+  top: -10px;
+  left: 15px;
+  opacity: 0.5;
+}
+.post-content ul, .post-content ol {
+  padding-left: 35px;
+  margin-bottom: 25px;
+}
+.post-content li {
+  margin-bottom: 10px;
+  position: relative;
+}
+.post-content ul li::before {
+  content: '▸';
+  color: #d8ff4d;
+  position: absolute;
+  left: -25px;
+  font-weight: bold;
+}
+.post-content code {
+  background: linear-gradient(135deg, rgba(216, 255, 77, 0.1) 0%, rgba(168, 224, 45, 0.05) 100%);
+  color: #d8ff4d;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-family: 'Courier New', monospace;
+  font-size: 0.98rem;
+  border: 1px solid rgba(216, 255, 77, 0.2);
+}
+.post-content pre {
+  background: linear-gradient(135deg, #1a1a1a 0%, #0f0f23 100%);
+  padding: 25px;
+  border-radius: 12px;
+  overflow-x: auto;
+  border-left: 5px solid #d8ff4d;
+  margin: 25px 0;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  position: relative;
+}
+.post-content pre code {
+  background: none;
+  padding: 0;
+  color: #fff;
+  font-size: 0.95rem;
+}
+.post-content pre::before {
+  content: '💻 Code Block';
+  position: absolute;
+  top: -10px;
+  left: 20px;
+  background: #d8ff4d;
+  color: #000;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+.post-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 25px 0;
+  background: rgba(26, 26, 46, 0.4);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+.post-content th, .post-content td {
+  border: 1px solid rgba(216, 255, 77, 0.2);
+  padding: 15px;
+  text-align: left;
+}
+.post-content th {
+  background: linear-gradient(135deg, #d8ff4d 0%, #a8e02d 100%);
+  color: #000;
+  font-weight: bold;
+}
+.post-content td {
+  background: rgba(255, 255, 255, 0.02);
+  transition: background 0.3s ease;
+}
+.post-content tr:hover td {
+  background: rgba(216, 255, 77, 0.05);
+}
+
+/* ===== ENHANCED IMAGE STYLING (Cho ảnh trong content) ===== */
+.post-content img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  margin: 30px 0;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6), 0 0 20px rgba(216, 255, 77, 0.2);
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  cursor: pointer;
+  position: relative;
+}
+.post-content img:hover {
+  transform: scale(1.02) translateY(-5px);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.7), 0 0 30px rgba(216, 255, 77, 0.4);
+}
+.post-content figcaption {
+  text-align: center;
+  color: #b8b8b8;
+  font-size: 0.9rem;
+  font-style: italic;
+  margin-top: 10px;
+  padding: 0 10px;
+}
+.post-content figure {
+  margin: 30px 0;
+  text-align: center;
+}
+
+/* ===== POST FOOTER ===== */
+.post-footer {
+  margin-top: 50px;
+  padding-top: 35px;
+  border-top: 2px solid rgba(216, 255, 77, 0.3);
+  animation: fadeIn 0.6s ease 0.7s forwards;
+  opacity: 0;
+}
+.btn {
+  display: inline-block;
+  padding: 12px 30px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 700;
+  text-transform: uppercase;
+  background: linear-gradient(135deg, #d8ff4d 0%, #a8e02d 100%);
+  color: #000;
+  box-shadow: 0 8px 20px rgba(216, 255, 77, 0.3);
+  transform: translateY(0) scale(1);
+  margin-top: 20px;
+  font-size: 1.05rem;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  letter-spacing: 0.4px;
+}
+.btn.secondary {
+  color: #d8ff4d;
+  border: 2px solid #d8ff4d;
+  background: transparent;
+}
+.btn.secondary:hover {
+  background: linear-gradient(135deg, #d8ff4d 0%, #a8e02d 100%);
+  color: #000;
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 8px 20px rgba(216, 255, 77, 0.3);
+}
+
+/* ===== RELATED POSTS STYLING ===== */
+.related-posts {
+  margin-top: 40px;
+  padding-top: 30px;
+  border-top: 2px solid rgba(216, 255, 77, 0.3);
+}
+.related-posts h2 {
+  color: #d8ff4d;
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  text-align: center;
+}
+.featured-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Đảm bảo 3 cột cố định */
+  gap: 20px;
+  justify-items: center;
+  visibility: visible; /* Đảm bảo grid không bị ẩn */
+}
+.featured-card {
+  background: linear-gradient(135deg, #1a1a1a 0%, #0f0f23 100%);
+  border-radius: 12px;
+  overflow: hidden;
+  width: 350px; /* Giữ kích thước cố định */
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease;
+  opacity: 1; /* Đảm bảo thẻ không bị ẩn */
+}
+.featured-card:hover {
+  transform: translateY(-5px);
+}
+.featured-card a {
+  text-decoration: none;
+}
+.featured-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-bottom: 2px solid rgba(216, 255, 77, 0.3);
+}
+.card-body {
+  padding: 20px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.card-meta {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+  color: #b8b8b8;
+  font-size: 1.1rem;
+}
+.card-meta .tag {
+  background: rgba(216, 255, 77, 0.1);
+  padding: 6px 14px;
+  border-radius: 15px;
+  color: #d8ff4d;
+  font-size: 1.1rem;
+}
+.card-meta .read-time {
+  color: #b8b8b8;
+  font-size: 1.1rem;
+}
+h3 {
+  font-size: 1.6rem;
+  margin: 15px 0;
+  color: #d8ff4d;
+}
+h3 a {
+  color: #d8ff4d;
+  text-decoration: none;
+}
+h3 a:hover {
+  text-decoration: underline;
+}
+.card-body p {
+  font-size: 1.2rem;
+  color: #e0e0e0;
+  margin: 15px 0;
+  text-align: left;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 15px;
+  color: #b8b8b8;
+  font-size: 1.1rem;
+}
+.author {
+  color: #d8ff4d;
+  font-size: 1.1rem;
+}
+.read-more {
+  color: #d8ff4d;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+.read-more:hover {
+  text-decoration: underline;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1100px) {
+  .post-hero {
+    height: 50vh;
+    min-height: 300px;
+  }
+  .post-title {
+    font-size: 2.4rem;
+  }
+  .post-meta {
+    flex-direction: column;
+    gap: 12px;
+  }
+  .post-content {
+    font-size: 1.05rem;
+    padding: 0 10px;
+  }
+  .post-content pre {
+    padding: 18px;
+    margin: 20px -10px;
+  }
+  .post-content img {
+    margin: 20px -10px;
+    border-radius: 0;
+  }
+  .featured-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 cột ở màn hình nhỏ hơn 1100px */
+  }
+  .featured-card {
+    width: 100%;
+    height: 400px;
+  }
+  .featured-card img {
+    height: 220px;
+  }
+}
+
+@media (max-width: 600px) {
+  .post-detail {
+    padding: 20px 10px;
+  }
+  .post-hero {
+    height: 40vh;
+    min-height: 250px;
+  }
+  .post-title {
+    font-size: 2rem;
+  }
+  .post-tags {
+    justify-content: flex-start;
+    gap: 8px;
+  }
+  .tag {
+    font-size: 0.85rem;
+    padding: 4px 10px;
+  }
+  .btn {
+    padding: 10px 20px;
+    font-size: 0.95rem;
+    text-align: center;
+  }
+  .featured-grid {
+    grid-template-columns: 1fr; /* 1 cột ở màn hình nhỏ hơn 600px */
+  }
+  .featured-card {
+    width: 100%;
+    height: 400px;
+  }
+  .featured-card img {
+    height: 220px;
+  }
+}
+</style>
+
+<script>
+// JS: Enhanced interactions - Lightbox cho images, smooth animations
+document.addEventListener('DOMContentLoaded', function() {
+  // Lightbox cho ảnh trong content (click để enlarge)
+  const images = document.querySelectorAll('.post-content img');
+  images.forEach(img => {
+    img.addEventListener('click', function() {
+      const lightbox = document.createElement('div');
+      lightbox.style.cssText = `
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.9);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 9999;
+        cursor: pointer;
+      `;
+      const enlarged = this.cloneNode();
+      enlarged.style.maxWidth = '90%';
+      enlarged.style.maxHeight = '90%';
+      enlarged.style.borderRadius = '8px';
+      enlarged.style.boxShadow = '0 0 50px rgba(216, 255, 77, 0.5)';
+      lightbox.appendChild(enlarged);
+      document.body.appendChild(lightbox);
+      
+      lightbox.addEventListener('click', () => {
+        document.body.removeChild(lightbox);
+      });
+    });
+  });
+
+  // Staggered animation cho content elements
+  const contentElements = document.querySelectorAll('.post-content > *:not(img)');
+  contentElements.forEach((el, index) => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateX(-20px)';
+    el.style.transition = `opacity 0.6s ease ${index * 0.1}s, transform 0.6s ease ${index * 0.1}s`;
+    setTimeout(() => {
+      el.style.opacity = '1';
+      el.style.transform = 'translateX(0)';
+    }, 500 + index * 100);
+  });
+
+  // Clickable tags (redirect to tag page)
+  const tags = document.querySelectorAll('.tag');
+  tags.forEach(tag => {
+    tag.style.cursor = 'pointer';
+    tag.addEventListener('click', function() {
+      window.location.href = `/tags/${this.textContent.substring(1).toLowerCase()}/`;
+    });
+  });
+
+  // Smooth scroll cho internal links
+  const links = document.querySelectorAll('a[href^="#"]');
+  links.forEach(link => {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  });
+});
+</script>
+{{ end }}

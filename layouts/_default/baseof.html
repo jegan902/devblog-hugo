@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ .Title }} | {{ .Site.Title }}</title>
+  {{ partial "custom-head.html" . }}
+</head>
+<body class="font-sans bg-gray-950 text-gray-100">
+  {{ partial "header.html" . }}
+  <main class="container mx-auto px-6 py-10">
+    {{ block "main" . }}{{ end }}
+  </main>
+  {{ partial "footer.html" . }}
+  {{ partial "custom-scripts.html" . }}
+</body>
+</html>

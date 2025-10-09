@@ -1,0 +1,6 @@
+- name: Java
+  slug: java
+- name: JavaScript
+  slug: javascript
+- name: Web Development
+  slug: web-development

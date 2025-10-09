@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Closures on DevBlog</title>
+    <link>http://localhost:1313/tags/closures/</link>
+    <description>Recent content in Closures on DevBlog</description>
+    <generator>Hugo</generator>
+    <language>vi</language>
+    <lastBuildDate>Mon, 06 Oct 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/closures/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Hiểu về Closures trong JavaScript</title>
+      <link>http://localhost:1313/blog/closures-js/</link>
+      <pubDate>Mon, 06 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/closures-js/</guid>
+      <description>&lt;h1 id=&#34;hiểu-về-closures-trong-javascript&#34;&gt;Hiểu về Closures trong JavaScript&lt;/h1&gt;&#xA;&lt;p&gt;Closures là một khái niệm quan trọng trong JavaScript, giúp bạn hiểu cách các biến và hàm tương tác với nhau trong phạm vi (scope). Trong bài viết này, chúng ta sẽ khám phá khái niệm closures, cách chúng hoạt động và những ứng dụng thực tế của chúng trong lập trình JavaScript.&lt;/p&gt;&#xA;&lt;h2 id=&#34;closures-là-gì&#34;&gt;Closures là gì?&lt;/h2&gt;&#xA;&lt;p&gt;Closures là một hàm có quyền truy cập vào biến từ phạm vi chứa nó, ngay cả khi hàm đó được gọi bên ngoài phạm vi chứa. Điều này có nghĩa là một hàm bên trong có thể &amp;ldquo;nhớ&amp;rdquo; và sử dụng các biến từ hàm bên ngoài mà nó được định nghĩa.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
