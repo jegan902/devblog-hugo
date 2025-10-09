@@ -1,19 +1,2 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Web Development on DevBlog</title>
-    <link>http://localhost:1313/tags/web-development/</link>
-    <description>Recent content in Web Development on DevBlog</description>
-    <generator>Hugo</generator>
-    <language>vi</language>
-    <lastBuildDate>Mon, 06 Oct 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/web-development/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Thao Tác với DOM trong JavaScript</title>
-      <link>http://localhost:1313/blog/dom-js/</link>
-      <pubDate>Mon, 06 Oct 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/blog/dom-js/</guid>
-      <description>&lt;h1 id=&#34;thao-tác-với-dom-trong-javascript&#34;&gt;Thao Tác với DOM trong JavaScript&lt;/h1&gt;&#xA;&lt;p&gt;Document Object Model (DOM) là một giao diện lập trình ứng dụng (API) cho các tài liệu HTML và XML. DOM cung cấp một cấu trúc cây (tree structure) đại diện cho trang web, cho phép các ngôn ngữ lập trình như JavaScript truy cập và thao tác với các phần tử trên trang. Trong bài viết này, chúng ta sẽ tìm hiểu về DOM và cách sử dụng JavaScript để thao tác với các phần tử HTML.&lt;/p&gt;</description>
-    </item>
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Web Development on DevBlog</title><link>https://jegan902.github.io/devblog-hugo/tags/web-development/</link><description>Recent content in Web Development on DevBlog</description><generator>Hugo</generator><language>vi</language><lastBuildDate>Mon, 06 Oct 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://jegan902.github.io/devblog-hugo/tags/web-development/index.xml" rel="self" type="application/rss+xml"/><item><title>Thao Tác với DOM trong JavaScript</title><link>https://jegan902.github.io/devblog-hugo/blog/dom-js/</link><pubDate>Mon, 06 Oct 2025 00:00:00 +0000</pubDate><guid>https://jegan902.github.io/devblog-hugo/blog/dom-js/</guid><description>&lt;h1 id="thao-tác-với-dom-trong-javascript"&gt;Thao Tác với DOM trong JavaScript&lt;/h1&gt;
+&lt;p&gt;Document Object Model (DOM) là một giao diện lập trình ứng dụng (API) cho các tài liệu HTML và XML. DOM cung cấp một cấu trúc cây (tree structure) đại diện cho trang web, cho phép các ngôn ngữ lập trình như JavaScript truy cập và thao tác với các phần tử trên trang. Trong bài viết này, chúng ta sẽ tìm hiểu về DOM và cách sử dụng JavaScript để thao tác với các phần tử HTML.&lt;/p&gt;</description></item></channel></rss>

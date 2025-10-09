@@ -1,4 +1,4 @@
-baseURL = "http://localhost:1313/"
+baseURL = "https://jegan902.github.io/devblog-hugo/"
 languageCode = "vi"
 title = "DevBlog"
 theme = "hugo-agency-web"

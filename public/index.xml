@@ -1,89 +1,67 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Chào mừng đến với DevBlog on DevBlog</title>
-    <link>http://localhost:1313/</link>
-    <description>Recent content in Chào mừng đến với DevBlog on DevBlog</description>
-    <generator>Hugo</generator>
-    <language>vi</language>
-    <lastBuildDate>Mon, 06 Oct 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Các mẫu thiết kế phổ biến trong Java</title>
-      <link>http://localhost:1313/blog/design-patterns-java/</link>
-      <pubDate>Mon, 06 Oct 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/blog/design-patterns-java/</guid>
-      <description>&lt;hr&gt;&#xA;&lt;h1 id=&#34;các-mẫu-thiết-kế-phổ-biến-trong-java&#34;&gt;Các mẫu thiết kế phổ biến trong Java&lt;/h1&gt;&#xA;&lt;p&gt;Mẫu thiết kế (design patterns) là các giải pháp tái sử dụng cho các vấn đề phổ biến trong phát triển phần mềm. Chúng giúp cải thiện cấu trúc và tổ chức mã nguồn, làm cho ứng dụng dễ bảo trì và mở rộng hơn. Trong bài viết này, chúng ta sẽ khám phá một số mẫu thiết kế phổ biến trong Java và cách áp dụng chúng trong lập trình hướng đối tượng (OOP).&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Hiểu về Async/Await trong JavaScript</title>
-      <link>http://localhost:1313/blog/async-await-js/</link>
-      <pubDate>Mon, 06 Oct 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/blog/async-await-js/</guid>
-      <description>&lt;h1 id=&#34;hiểu-về-asyncawait-trong-javascript&#34;&gt;Hiểu về Async/Await trong JavaScript&lt;/h1&gt;&#xA;&lt;p&gt;JavaScript là một ngôn ngữ lập trình phổ biến được sử dụng rộng rãi trong phát triển web. Một trong những thách thức lớn khi làm việc với JavaScript là xử lý các tác vụ bất đồng bộ (asynchronous tasks). Trước đây, chúng ta thường sử dụng callback và Promise để quản lý các tác vụ này, nhưng với sự xuất hiện của async/await, việc viết mã bất đồng bộ trở nên dễ dàng và trực quan hơn rất nhiều. Trong bài viết này, chúng ta sẽ tìm hiểu về async/await và cách sử dụng chúng trong JavaScript.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Hiểu về Closures trong JavaScript</title>
-      <link>http://localhost:1313/blog/closures-js/</link>
-      <pubDate>Mon, 06 Oct 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/blog/closures-js/</guid>
-      <description>&lt;h1 id=&#34;hiểu-về-closures-trong-javascript&#34;&gt;Hiểu về Closures trong JavaScript&lt;/h1&gt;&#xA;&lt;p&gt;Closures là một khái niệm quan trọng trong JavaScript, giúp bạn hiểu cách các biến và hàm tương tác với nhau trong phạm vi (scope). Trong bài viết này, chúng ta sẽ khám phá khái niệm closures, cách chúng hoạt động và những ứng dụng thực tế của chúng trong lập trình JavaScript.&lt;/p&gt;&#xA;&lt;h2 id=&#34;closures-là-gì&#34;&gt;Closures là gì?&lt;/h2&gt;&#xA;&lt;p&gt;Closures là một hàm có quyền truy cập vào biến từ phạm vi chứa nó, ngay cả khi hàm đó được gọi bên ngoài phạm vi chứa. Điều này có nghĩa là một hàm bên trong có thể &amp;ldquo;nhớ&amp;rdquo; và sử dụng các biến từ hàm bên ngoài mà nó được định nghĩa.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Lập Trình Đa Luồng trong Java</title>
-      <link>http://localhost:1313/blog/multithreading-java/</link>
-      <pubDate>Mon, 06 Oct 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/blog/multithreading-java/</guid>
-      <description>&lt;h1 id=&#34;lập-trình-đa-luồng-trong-java&#34;&gt;Lập Trình Đa Luồng trong Java&lt;/h1&gt;&#xA;&lt;p&gt;Lập trình đa luồng (multithreading) là một kỹ thuật quan trọng trong phát triển phần mềm, cho phép một ứng dụng thực hiện nhiều tác vụ cùng một lúc. Java cung cấp một mô hình đa luồng mạnh mẽ, giúp tối ưu hóa hiệu suất và cải thiện trải nghiệm người dùng. Trong bài viết này, chúng ta sẽ tìm hiểu về lập trình đa luồng trong Java và cách sử dụng các công cụ để quản lý đồng thời.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Thao Tác với DOM trong JavaScript</title>
-      <link>http://localhost:1313/blog/dom-js/</link>
-      <pubDate>Mon, 06 Oct 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/blog/dom-js/</guid>
-      <description>&lt;h1 id=&#34;thao-tác-với-dom-trong-javascript&#34;&gt;Thao Tác với DOM trong JavaScript&lt;/h1&gt;&#xA;&lt;p&gt;Document Object Model (DOM) là một giao diện lập trình ứng dụng (API) cho các tài liệu HTML và XML. DOM cung cấp một cấu trúc cây (tree structure) đại diện cho trang web, cho phép các ngôn ngữ lập trình như JavaScript truy cập và thao tác với các phần tử trên trang. Trong bài viết này, chúng ta sẽ tìm hiểu về DOM và cách sử dụng JavaScript để thao tác với các phần tử HTML.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Tổng Quan về ES6 trong JavaScript</title>
-      <link>http://localhost:1313/blog/es6-js/</link>
-      <pubDate>Mon, 06 Oct 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/blog/es6-js/</guid>
-      <description>&lt;h1 id=&#34;tổng-quan-về-es6-trong-javascript&#34;&gt;Tổng Quan về ES6 trong JavaScript&lt;/h1&gt;&#xA;&lt;p&gt;ES6, hay còn gọi là ECMAScript 2015, là một phiên bản quan trọng của ngôn ngữ lập trình JavaScript, mang đến nhiều tính năng mới giúp cải thiện trải nghiệm lập trình và làm cho mã nguồn trở nên rõ ràng hơn. Trong bài viết này, chúng ta sẽ khám phá các tính năng nổi bật của ES6 và cách sử dụng chúng trong phát triển ứng dụng JavaScript.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Xử Lý Ngoại Lệ trong Java</title>
-      <link>http://localhost:1313/blog/exception-handling-java/</link>
-      <pubDate>Mon, 06 Oct 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/blog/exception-handling-java/</guid>
-      <description>&lt;h1 id=&#34;xử-lý-ngoại-lệ-trong-java&#34;&gt;Xử Lý Ngoại Lệ trong Java&lt;/h1&gt;&#xA;&lt;p&gt;Trong quá trình phát triển phần mềm, việc xử lý các lỗi và ngoại lệ là một phần quan trọng để đảm bảo ứng dụng hoạt động ổn định và không bị gián đoạn. Java cung cấp một cơ chế mạnh mẽ để xử lý ngoại lệ thông qua các khối try-catch-finally. Trong bài viết này, chúng ta sẽ tìm hiểu về cách xử lý ngoại lệ trong Java và cách sử dụng các khối try-catch để quản lý lỗi hiệu quả.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>About Me</title>
-      <link>http://localhost:1313/about/</link>
-      <pubDate>Sat, 04 Oct 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/about/</guid>
-      <description>&lt;h2 id=&#34;-xin-chào-tôi-là-hưng&#34;&gt;👋 Xin chào, tôi là Hưng&lt;/h2&gt;&#xA;&lt;p&gt;Một lập trình viên đam mê xây dựng giao diện và ứng dụng hiện đại. Tôi tin rằng mỗi dòng code đều có thể biến thành trải nghiệm tuyệt vời cho người dùng.&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h3 id=&#34;-kỹ-năng&#34;&gt;🚀 Kỹ năng&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;React, JavaScript, TypeScript&lt;/li&gt;&#xA;&lt;li&gt;HTML, CSS, TailwindCSS&lt;/li&gt;&#xA;&lt;li&gt;Node.js, Express, API&lt;/li&gt;&#xA;&lt;li&gt;Git, CI/CD, DevOps cơ bản&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;hr&gt;&#xA;&lt;h3 id=&#34;-kinh-nghiệm&#34;&gt;💼 Kinh nghiệm&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Frontend Developer&lt;/strong&gt; tại Công ty A (2021 - nay)&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Xây dựng ứng dụng web với React + Redux&lt;/li&gt;&#xA;&lt;li&gt;Tối ưu hiệu năng và cải thiện UX&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Freelance Developer&lt;/strong&gt; (2019 - 2021)&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Thiết kế website cho startup và cá nhân&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;hr&gt;&#xA;&lt;h3 id=&#34;-học-vấn&#34;&gt;🎓 Học vấn&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Cử nhân Công nghệ Thông tin&lt;/strong&gt; – Đại học XYZ (2016 - 2020)&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;hr&gt;&#xA;&lt;h3 id=&#34;-triết-lý-làm-việc&#34;&gt;✨ Triết lý làm việc&lt;/h3&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;&amp;ldquo;Code không chỉ để chạy được, mà còn phải dễ đọc, dễ mở rộng, và mang lại giá trị cho người dùng.&amp;rdquo;&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Contact</title>
-      <link>http://localhost:1313/contact/</link>
-      <pubDate>Sat, 04 Oct 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/contact/</guid>
-      <description>&lt;h2 id=&#34;-liên-hệ&#34;&gt;📬 Liên hệ&lt;/h2&gt;&#xA;&lt;p&gt;Nếu bạn muốn kết nối, hợp tác hoặc đơn giản chỉ muốn trò chuyện, hãy liên hệ với tôi qua các kênh sau:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;📧 Email: &lt;a href=&#34;mailto:h.com.vha@gmail.com&#34;&gt;h.com.vha@gmail.com&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;🐦 Twitter: &lt;a href=&#34;https://twitter.com/&#34;&gt;@pixelpushers&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;💼 LinkedIn: &lt;a href=&#34;https://linkedin.com/&#34;&gt;Pixel Pushers&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;💻 GitHub: &lt;a href=&#34;https://github.com/&#34;&gt;Jegan902&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;-form-liên-hệ&#34;&gt;📝 Form liên hệ&lt;/h2&gt;&#xA;&lt;p&gt;Hiện tại blog đang chạy trên Hugo (tĩnh), nên form liên hệ có thể được kết nối qua dịch vụ như:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://formspree.io/&#34;&gt;Formspree&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://docs.netlify.com/forms/setup/&#34;&gt;Netlify Forms&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Ví dụ cấu hình form với Formspree:&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Giới thiệu về Java và lập trình hướng đối tượng</title>
-      <link>http://localhost:1313/blog/gioi-thieu-ve-java/</link>
-      <pubDate>Sat, 04 Oct 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/blog/gioi-thieu-ve-java/</guid>
-      <description>&lt;h1 id=&#34;giới-thiệu-về-java-và-lập-trình-hướng-đối-tượng&#34;&gt;Giới thiệu về Java và lập trình hướng đối tượng&lt;/h1&gt;&#xA;&lt;p&gt;Tìm hiểu những khái niệm cơ bản về Java và các nguyên lý lập trình hướng đối tượng trong Java.&lt;/p&gt;&#xA;&lt;h2 id=&#34;java-là-gì&#34;&gt;Java là gì?&lt;/h2&gt;&#xA;&lt;p&gt;Java là một ngôn ngữ lập trình đa năng, thuộc nhóm ngôn ngữ hướng đối tượng, được sử dụng rộng rãi trong phát triển ứng dụng web, ứng dụng doanh nghiệp, ứng dụng di động (Android), và nhiều lĩnh vực khác. Một số đặc điểm chính của Java bao gồm:&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Làm việc với Collections Framework trong Java</title>
-      <link>http://localhost:1313/blog/collections-java/</link>
-      <pubDate>Sat, 06 Jan 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/blog/collections-java/</guid>
-      <description>&lt;h1 id=&#34;làm-việc-với-collections-framework-trong-java&#34;&gt;Làm việc với Collections Framework trong Java&lt;/h1&gt;&#xA;&lt;p&gt;Hướng dẫn chi tiết về cách sử dụng &lt;strong&gt;Collections Framework&lt;/strong&gt; để quản lý dữ liệu hiệu quả trong Java.&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;-collections-framework-là-gì&#34;&gt;📘 Collections Framework là gì?&lt;/h2&gt;&#xA;&lt;p&gt;&lt;strong&gt;Collections Framework&lt;/strong&gt; là một kiến trúc thống nhất để biểu diễn và thao tác với các tập hợp dữ liệu như &lt;code&gt;List&lt;/code&gt;, &lt;code&gt;Set&lt;/code&gt;, &lt;code&gt;Map&lt;/code&gt; cùng các lớp triển khai như &lt;code&gt;ArrayList&lt;/code&gt;, &lt;code&gt;HashMap&lt;/code&gt;, v.v.&lt;br&gt;&#xA;Nó giúp việc quản lý dữ liệu trở nên &lt;strong&gt;linh hoạt, nhất quán và dễ bảo trì hơn&lt;/strong&gt;.&lt;/p&gt;</description>
-    </item>
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Chào mừng đến với DevBlog on DevBlog</title><link>https://jegan902.github.io/devblog-hugo/</link><description>Recent content in Chào mừng đến với DevBlog on DevBlog</description><generator>Hugo</generator><language>vi</language><lastBuildDate>Mon, 06 Oct 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://jegan902.github.io/devblog-hugo/index.xml" rel="self" type="application/rss+xml"/><item><title>Các mẫu thiết kế phổ biến trong Java</title><link>https://jegan902.github.io/devblog-hugo/blog/design-patterns-java/</link><pubDate>Mon, 06 Oct 2025 00:00:00 +0000</pubDate><guid>https://jegan902.github.io/devblog-hugo/blog/design-patterns-java/</guid><description>&lt;hr&gt;
+&lt;h1 id="các-mẫu-thiết-kế-phổ-biến-trong-java"&gt;Các mẫu thiết kế phổ biến trong Java&lt;/h1&gt;
+&lt;p&gt;Mẫu thiết kế (design patterns) là các giải pháp tái sử dụng cho các vấn đề phổ biến trong phát triển phần mềm. Chúng giúp cải thiện cấu trúc và tổ chức mã nguồn, làm cho ứng dụng dễ bảo trì và mở rộng hơn. Trong bài viết này, chúng ta sẽ khám phá một số mẫu thiết kế phổ biến trong Java và cách áp dụng chúng trong lập trình hướng đối tượng (OOP).&lt;/p&gt;</description></item><item><title>Hiểu về Async/Await trong JavaScript</title><link>https://jegan902.github.io/devblog-hugo/blog/async-await-js/</link><pubDate>Mon, 06 Oct 2025 00:00:00 +0000</pubDate><guid>https://jegan902.github.io/devblog-hugo/blog/async-await-js/</guid><description>&lt;h1 id="hiểu-về-asyncawait-trong-javascript"&gt;Hiểu về Async/Await trong JavaScript&lt;/h1&gt;
+&lt;p&gt;JavaScript là một ngôn ngữ lập trình phổ biến được sử dụng rộng rãi trong phát triển web. Một trong những thách thức lớn khi làm việc với JavaScript là xử lý các tác vụ bất đồng bộ (asynchronous tasks). Trước đây, chúng ta thường sử dụng callback và Promise để quản lý các tác vụ này, nhưng với sự xuất hiện của async/await, việc viết mã bất đồng bộ trở nên dễ dàng và trực quan hơn rất nhiều. Trong bài viết này, chúng ta sẽ tìm hiểu về async/await và cách sử dụng chúng trong JavaScript.&lt;/p&gt;</description></item><item><title>Hiểu về Closures trong JavaScript</title><link>https://jegan902.github.io/devblog-hugo/blog/closures-js/</link><pubDate>Mon, 06 Oct 2025 00:00:00 +0000</pubDate><guid>https://jegan902.github.io/devblog-hugo/blog/closures-js/</guid><description>&lt;h1 id="hiểu-về-closures-trong-javascript"&gt;Hiểu về Closures trong JavaScript&lt;/h1&gt;
+&lt;p&gt;Closures là một khái niệm quan trọng trong JavaScript, giúp bạn hiểu cách các biến và hàm tương tác với nhau trong phạm vi (scope). Trong bài viết này, chúng ta sẽ khám phá khái niệm closures, cách chúng hoạt động và những ứng dụng thực tế của chúng trong lập trình JavaScript.&lt;/p&gt;
+&lt;h2 id="closures-là-gì"&gt;Closures là gì?&lt;/h2&gt;
+&lt;p&gt;Closures là một hàm có quyền truy cập vào biến từ phạm vi chứa nó, ngay cả khi hàm đó được gọi bên ngoài phạm vi chứa. Điều này có nghĩa là một hàm bên trong có thể &amp;ldquo;nhớ&amp;rdquo; và sử dụng các biến từ hàm bên ngoài mà nó được định nghĩa.&lt;/p&gt;</description></item><item><title>Lập Trình Đa Luồng trong Java</title><link>https://jegan902.github.io/devblog-hugo/blog/multithreading-java/</link><pubDate>Mon, 06 Oct 2025 00:00:00 +0000</pubDate><guid>https://jegan902.github.io/devblog-hugo/blog/multithreading-java/</guid><description>&lt;h1 id="lập-trình-đa-luồng-trong-java"&gt;Lập Trình Đa Luồng trong Java&lt;/h1&gt;
+&lt;p&gt;Lập trình đa luồng (multithreading) là một kỹ thuật quan trọng trong phát triển phần mềm, cho phép một ứng dụng thực hiện nhiều tác vụ cùng một lúc. Java cung cấp một mô hình đa luồng mạnh mẽ, giúp tối ưu hóa hiệu suất và cải thiện trải nghiệm người dùng. Trong bài viết này, chúng ta sẽ tìm hiểu về lập trình đa luồng trong Java và cách sử dụng các công cụ để quản lý đồng thời.&lt;/p&gt;</description></item><item><title>Thao Tác với DOM trong JavaScript</title><link>https://jegan902.github.io/devblog-hugo/blog/dom-js/</link><pubDate>Mon, 06 Oct 2025 00:00:00 +0000</pubDate><guid>https://jegan902.github.io/devblog-hugo/blog/dom-js/</guid><description>&lt;h1 id="thao-tác-với-dom-trong-javascript"&gt;Thao Tác với DOM trong JavaScript&lt;/h1&gt;
+&lt;p&gt;Document Object Model (DOM) là một giao diện lập trình ứng dụng (API) cho các tài liệu HTML và XML. DOM cung cấp một cấu trúc cây (tree structure) đại diện cho trang web, cho phép các ngôn ngữ lập trình như JavaScript truy cập và thao tác với các phần tử trên trang. Trong bài viết này, chúng ta sẽ tìm hiểu về DOM và cách sử dụng JavaScript để thao tác với các phần tử HTML.&lt;/p&gt;</description></item><item><title>Tổng Quan về ES6 trong JavaScript</title><link>https://jegan902.github.io/devblog-hugo/blog/es6-js/</link><pubDate>Mon, 06 Oct 2025 00:00:00 +0000</pubDate><guid>https://jegan902.github.io/devblog-hugo/blog/es6-js/</guid><description>&lt;h1 id="tổng-quan-về-es6-trong-javascript"&gt;Tổng Quan về ES6 trong JavaScript&lt;/h1&gt;
+&lt;p&gt;ES6, hay còn gọi là ECMAScript 2015, là một phiên bản quan trọng của ngôn ngữ lập trình JavaScript, mang đến nhiều tính năng mới giúp cải thiện trải nghiệm lập trình và làm cho mã nguồn trở nên rõ ràng hơn. Trong bài viết này, chúng ta sẽ khám phá các tính năng nổi bật của ES6 và cách sử dụng chúng trong phát triển ứng dụng JavaScript.&lt;/p&gt;</description></item><item><title>Xử Lý Ngoại Lệ trong Java</title><link>https://jegan902.github.io/devblog-hugo/blog/exception-handling-java/</link><pubDate>Mon, 06 Oct 2025 00:00:00 +0000</pubDate><guid>https://jegan902.github.io/devblog-hugo/blog/exception-handling-java/</guid><description>&lt;h1 id="xử-lý-ngoại-lệ-trong-java"&gt;Xử Lý Ngoại Lệ trong Java&lt;/h1&gt;
+&lt;p&gt;Trong quá trình phát triển phần mềm, việc xử lý các lỗi và ngoại lệ là một phần quan trọng để đảm bảo ứng dụng hoạt động ổn định và không bị gián đoạn. Java cung cấp một cơ chế mạnh mẽ để xử lý ngoại lệ thông qua các khối try-catch-finally. Trong bài viết này, chúng ta sẽ tìm hiểu về cách xử lý ngoại lệ trong Java và cách sử dụng các khối try-catch để quản lý lỗi hiệu quả.&lt;/p&gt;</description></item><item><title>About Me</title><link>https://jegan902.github.io/devblog-hugo/about/</link><pubDate>Sat, 04 Oct 2025 00:00:00 +0000</pubDate><guid>https://jegan902.github.io/devblog-hugo/about/</guid><description>&lt;h2 id="-xin-chào-tôi-là-hưng"&gt;👋 Xin chào, tôi là Hưng&lt;/h2&gt;
+&lt;p&gt;Một lập trình viên đam mê xây dựng giao diện và ứng dụng hiện đại. Tôi tin rằng mỗi dòng code đều có thể biến thành trải nghiệm tuyệt vời cho người dùng.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id="-kỹ-năng"&gt;🚀 Kỹ năng&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;React, JavaScript, TypeScript&lt;/li&gt;
+&lt;li&gt;HTML, CSS, TailwindCSS&lt;/li&gt;
+&lt;li&gt;Node.js, Express, API&lt;/li&gt;
+&lt;li&gt;Git, CI/CD, DevOps cơ bản&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3 id="-kinh-nghiệm"&gt;💼 Kinh nghiệm&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Frontend Developer&lt;/strong&gt; tại Công ty A (2021 - nay)
+&lt;ul&gt;
+&lt;li&gt;Xây dựng ứng dụng web với React + Redux&lt;/li&gt;
+&lt;li&gt;Tối ưu hiệu năng và cải thiện UX&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Freelance Developer&lt;/strong&gt; (2019 - 2021)
+&lt;ul&gt;
+&lt;li&gt;Thiết kế website cho startup và cá nhân&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3 id="-học-vấn"&gt;🎓 Học vấn&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Cử nhân Công nghệ Thông tin&lt;/strong&gt; – Đại học XYZ (2016 - 2020)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3 id="-triết-lý-làm-việc"&gt;✨ Triết lý làm việc&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&amp;ldquo;Code không chỉ để chạy được, mà còn phải dễ đọc, dễ mở rộng, và mang lại giá trị cho người dùng.&amp;rdquo;&lt;/p&gt;</description></item><item><title>Contact</title><link>https://jegan902.github.io/devblog-hugo/contact/</link><pubDate>Sat, 04 Oct 2025 00:00:00 +0000</pubDate><guid>https://jegan902.github.io/devblog-hugo/contact/</guid><description>&lt;h2 id="-liên-hệ"&gt;📬 Liên hệ&lt;/h2&gt;
+&lt;p&gt;Nếu bạn muốn kết nối, hợp tác hoặc đơn giản chỉ muốn trò chuyện, hãy liên hệ với tôi qua các kênh sau:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;📧 Email: &lt;a href="mailto:h.com.vha@gmail.com"&gt;h.com.vha@gmail.com&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;🐦 Twitter: &lt;a href="https://twitter.com/"&gt;@pixelpushers&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;💼 LinkedIn: &lt;a href="https://linkedin.com/"&gt;Pixel Pushers&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;💻 GitHub: &lt;a href="https://github.com/"&gt;Jegan902&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id="-form-liên-hệ"&gt;📝 Form liên hệ&lt;/h2&gt;
+&lt;p&gt;Hiện tại blog đang chạy trên Hugo (tĩnh), nên form liên hệ có thể được kết nối qua dịch vụ như:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://formspree.io/"&gt;Formspree&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://docs.netlify.com/forms/setup/"&gt;Netlify Forms&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Ví dụ cấu hình form với Formspree:&lt;/p&gt;</description></item><item><title>Giới thiệu về Java và lập trình hướng đối tượng</title><link>https://jegan902.github.io/devblog-hugo/blog/gioi-thieu-ve-java/</link><pubDate>Sat, 04 Oct 2025 00:00:00 +0000</pubDate><guid>https://jegan902.github.io/devblog-hugo/blog/gioi-thieu-ve-java/</guid><description>&lt;h1 id="giới-thiệu-về-java-và-lập-trình-hướng-đối-tượng"&gt;Giới thiệu về Java và lập trình hướng đối tượng&lt;/h1&gt;
+&lt;p&gt;Tìm hiểu những khái niệm cơ bản về Java và các nguyên lý lập trình hướng đối tượng trong Java.&lt;/p&gt;
+&lt;h2 id="java-là-gì"&gt;Java là gì?&lt;/h2&gt;
+&lt;p&gt;Java là một ngôn ngữ lập trình đa năng, thuộc nhóm ngôn ngữ hướng đối tượng, được sử dụng rộng rãi trong phát triển ứng dụng web, ứng dụng doanh nghiệp, ứng dụng di động (Android), và nhiều lĩnh vực khác. Một số đặc điểm chính của Java bao gồm:&lt;/p&gt;</description></item><item><title>Làm việc với Collections Framework trong Java</title><link>https://jegan902.github.io/devblog-hugo/blog/collections-java/</link><pubDate>Sat, 06 Jan 2024 00:00:00 +0000</pubDate><guid>https://jegan902.github.io/devblog-hugo/blog/collections-java/</guid><description>&lt;h1 id="làm-việc-với-collections-framework-trong-java"&gt;Làm việc với Collections Framework trong Java&lt;/h1&gt;
+&lt;p&gt;Hướng dẫn chi tiết về cách sử dụng &lt;strong&gt;Collections Framework&lt;/strong&gt; để quản lý dữ liệu hiệu quả trong Java.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="-collections-framework-là-gì"&gt;📘 Collections Framework là gì?&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Collections Framework&lt;/strong&gt; là một kiến trúc thống nhất để biểu diễn và thao tác với các tập hợp dữ liệu như &lt;code&gt;List&lt;/code&gt;, &lt;code&gt;Set&lt;/code&gt;, &lt;code&gt;Map&lt;/code&gt; cùng các lớp triển khai như &lt;code&gt;ArrayList&lt;/code&gt;, &lt;code&gt;HashMap&lt;/code&gt;, v.v.&lt;br&gt;
+Nó giúp việc quản lý dữ liệu trở nên &lt;strong&gt;linh hoạt, nhất quán và dễ bảo trì hơn&lt;/strong&gt;.&lt;/p&gt;</description></item></channel></rss>

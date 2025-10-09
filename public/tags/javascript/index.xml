@@ -1,40 +1,7 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Javascript on DevBlog</title>
-    <link>http://localhost:1313/tags/javascript/</link>
-    <description>Recent content in Javascript on DevBlog</description>
-    <generator>Hugo</generator>
-    <language>vi</language>
-    <lastBuildDate>Mon, 06 Oct 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Hiểu về Async/Await trong JavaScript</title>
-      <link>http://localhost:1313/blog/async-await-js/</link>
-      <pubDate>Mon, 06 Oct 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/blog/async-await-js/</guid>
-      <description>&lt;h1 id=&#34;hiểu-về-asyncawait-trong-javascript&#34;&gt;Hiểu về Async/Await trong JavaScript&lt;/h1&gt;&#xA;&lt;p&gt;JavaScript là một ngôn ngữ lập trình phổ biến được sử dụng rộng rãi trong phát triển web. Một trong những thách thức lớn khi làm việc với JavaScript là xử lý các tác vụ bất đồng bộ (asynchronous tasks). Trước đây, chúng ta thường sử dụng callback và Promise để quản lý các tác vụ này, nhưng với sự xuất hiện của async/await, việc viết mã bất đồng bộ trở nên dễ dàng và trực quan hơn rất nhiều. Trong bài viết này, chúng ta sẽ tìm hiểu về async/await và cách sử dụng chúng trong JavaScript.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Hiểu về Closures trong JavaScript</title>
-      <link>http://localhost:1313/blog/closures-js/</link>
-      <pubDate>Mon, 06 Oct 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/blog/closures-js/</guid>
-      <description>&lt;h1 id=&#34;hiểu-về-closures-trong-javascript&#34;&gt;Hiểu về Closures trong JavaScript&lt;/h1&gt;&#xA;&lt;p&gt;Closures là một khái niệm quan trọng trong JavaScript, giúp bạn hiểu cách các biến và hàm tương tác với nhau trong phạm vi (scope). Trong bài viết này, chúng ta sẽ khám phá khái niệm closures, cách chúng hoạt động và những ứng dụng thực tế của chúng trong lập trình JavaScript.&lt;/p&gt;&#xA;&lt;h2 id=&#34;closures-là-gì&#34;&gt;Closures là gì?&lt;/h2&gt;&#xA;&lt;p&gt;Closures là một hàm có quyền truy cập vào biến từ phạm vi chứa nó, ngay cả khi hàm đó được gọi bên ngoài phạm vi chứa. Điều này có nghĩa là một hàm bên trong có thể &amp;ldquo;nhớ&amp;rdquo; và sử dụng các biến từ hàm bên ngoài mà nó được định nghĩa.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Thao Tác với DOM trong JavaScript</title>
-      <link>http://localhost:1313/blog/dom-js/</link>
-      <pubDate>Mon, 06 Oct 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/blog/dom-js/</guid>
-      <description>&lt;h1 id=&#34;thao-tác-với-dom-trong-javascript&#34;&gt;Thao Tác với DOM trong JavaScript&lt;/h1&gt;&#xA;&lt;p&gt;Document Object Model (DOM) là một giao diện lập trình ứng dụng (API) cho các tài liệu HTML và XML. DOM cung cấp một cấu trúc cây (tree structure) đại diện cho trang web, cho phép các ngôn ngữ lập trình như JavaScript truy cập và thao tác với các phần tử trên trang. Trong bài viết này, chúng ta sẽ tìm hiểu về DOM và cách sử dụng JavaScript để thao tác với các phần tử HTML.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Tổng Quan về ES6 trong JavaScript</title>
-      <link>http://localhost:1313/blog/es6-js/</link>
-      <pubDate>Mon, 06 Oct 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/blog/es6-js/</guid>
-      <description>&lt;h1 id=&#34;tổng-quan-về-es6-trong-javascript&#34;&gt;Tổng Quan về ES6 trong JavaScript&lt;/h1&gt;&#xA;&lt;p&gt;ES6, hay còn gọi là ECMAScript 2015, là một phiên bản quan trọng của ngôn ngữ lập trình JavaScript, mang đến nhiều tính năng mới giúp cải thiện trải nghiệm lập trình và làm cho mã nguồn trở nên rõ ràng hơn. Trong bài viết này, chúng ta sẽ khám phá các tính năng nổi bật của ES6 và cách sử dụng chúng trong phát triển ứng dụng JavaScript.&lt;/p&gt;</description>
-    </item>
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Javascript on DevBlog</title><link>https://jegan902.github.io/devblog-hugo/tags/javascript/</link><description>Recent content in Javascript on DevBlog</description><generator>Hugo</generator><language>vi</language><lastBuildDate>Mon, 06 Oct 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://jegan902.github.io/devblog-hugo/tags/javascript/index.xml" rel="self" type="application/rss+xml"/><item><title>Hiểu về Async/Await trong JavaScript</title><link>https://jegan902.github.io/devblog-hugo/blog/async-await-js/</link><pubDate>Mon, 06 Oct 2025 00:00:00 +0000</pubDate><guid>https://jegan902.github.io/devblog-hugo/blog/async-await-js/</guid><description>&lt;h1 id="hiểu-về-asyncawait-trong-javascript"&gt;Hiểu về Async/Await trong JavaScript&lt;/h1&gt;
+&lt;p&gt;JavaScript là một ngôn ngữ lập trình phổ biến được sử dụng rộng rãi trong phát triển web. Một trong những thách thức lớn khi làm việc với JavaScript là xử lý các tác vụ bất đồng bộ (asynchronous tasks). Trước đây, chúng ta thường sử dụng callback và Promise để quản lý các tác vụ này, nhưng với sự xuất hiện của async/await, việc viết mã bất đồng bộ trở nên dễ dàng và trực quan hơn rất nhiều. Trong bài viết này, chúng ta sẽ tìm hiểu về async/await và cách sử dụng chúng trong JavaScript.&lt;/p&gt;</description></item><item><title>Hiểu về Closures trong JavaScript</title><link>https://jegan902.github.io/devblog-hugo/blog/closures-js/</link><pubDate>Mon, 06 Oct 2025 00:00:00 +0000</pubDate><guid>https://jegan902.github.io/devblog-hugo/blog/closures-js/</guid><description>&lt;h1 id="hiểu-về-closures-trong-javascript"&gt;Hiểu về Closures trong JavaScript&lt;/h1&gt;
+&lt;p&gt;Closures là một khái niệm quan trọng trong JavaScript, giúp bạn hiểu cách các biến và hàm tương tác với nhau trong phạm vi (scope). Trong bài viết này, chúng ta sẽ khám phá khái niệm closures, cách chúng hoạt động và những ứng dụng thực tế của chúng trong lập trình JavaScript.&lt;/p&gt;
+&lt;h2 id="closures-là-gì"&gt;Closures là gì?&lt;/h2&gt;
+&lt;p&gt;Closures là một hàm có quyền truy cập vào biến từ phạm vi chứa nó, ngay cả khi hàm đó được gọi bên ngoài phạm vi chứa. Điều này có nghĩa là một hàm bên trong có thể &amp;ldquo;nhớ&amp;rdquo; và sử dụng các biến từ hàm bên ngoài mà nó được định nghĩa.&lt;/p&gt;</description></item><item><title>Thao Tác với DOM trong JavaScript</title><link>https://jegan902.github.io/devblog-hugo/blog/dom-js/</link><pubDate>Mon, 06 Oct 2025 00:00:00 +0000</pubDate><guid>https://jegan902.github.io/devblog-hugo/blog/dom-js/</guid><description>&lt;h1 id="thao-tác-với-dom-trong-javascript"&gt;Thao Tác với DOM trong JavaScript&lt;/h1&gt;
+&lt;p&gt;Document Object Model (DOM) là một giao diện lập trình ứng dụng (API) cho các tài liệu HTML và XML. DOM cung cấp một cấu trúc cây (tree structure) đại diện cho trang web, cho phép các ngôn ngữ lập trình như JavaScript truy cập và thao tác với các phần tử trên trang. Trong bài viết này, chúng ta sẽ tìm hiểu về DOM và cách sử dụng JavaScript để thao tác với các phần tử HTML.&lt;/p&gt;</description></item><item><title>Tổng Quan về ES6 trong JavaScript</title><link>https://jegan902.github.io/devblog-hugo/blog/es6-js/</link><pubDate>Mon, 06 Oct 2025 00:00:00 +0000</pubDate><guid>https://jegan902.github.io/devblog-hugo/blog/es6-js/</guid><description>&lt;h1 id="tổng-quan-về-es6-trong-javascript"&gt;Tổng Quan về ES6 trong JavaScript&lt;/h1&gt;
+&lt;p&gt;ES6, hay còn gọi là ECMAScript 2015, là một phiên bản quan trọng của ngôn ngữ lập trình JavaScript, mang đến nhiều tính năng mới giúp cải thiện trải nghiệm lập trình và làm cho mã nguồn trở nên rõ ràng hơn. Trong bài viết này, chúng ta sẽ khám phá các tính năng nổi bật của ES6 và cách sử dụng chúng trong phát triển ứng dụng JavaScript.&lt;/p&gt;</description></item></channel></rss>

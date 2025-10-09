@@ -1,19 +1,2 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Async on DevBlog</title>
-    <link>http://localhost:1313/tags/async/</link>
-    <description>Recent content in Async on DevBlog</description>
-    <generator>Hugo</generator>
-    <language>vi</language>
-    <lastBuildDate>Mon, 06 Oct 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/async/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Hiểu về Async/Await trong JavaScript</title>
-      <link>http://localhost:1313/blog/async-await-js/</link>
-      <pubDate>Mon, 06 Oct 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/blog/async-await-js/</guid>
-      <description>&lt;h1 id=&#34;hiểu-về-asyncawait-trong-javascript&#34;&gt;Hiểu về Async/Await trong JavaScript&lt;/h1&gt;&#xA;&lt;p&gt;JavaScript là một ngôn ngữ lập trình phổ biến được sử dụng rộng rãi trong phát triển web. Một trong những thách thức lớn khi làm việc với JavaScript là xử lý các tác vụ bất đồng bộ (asynchronous tasks). Trước đây, chúng ta thường sử dụng callback và Promise để quản lý các tác vụ này, nhưng với sự xuất hiện của async/await, việc viết mã bất đồng bộ trở nên dễ dàng và trực quan hơn rất nhiều. Trong bài viết này, chúng ta sẽ tìm hiểu về async/await và cách sử dụng chúng trong JavaScript.&lt;/p&gt;</description>
-    </item>
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Async on DevBlog</title><link>https://jegan902.github.io/devblog-hugo/tags/async/</link><description>Recent content in Async on DevBlog</description><generator>Hugo</generator><language>vi</language><lastBuildDate>Mon, 06 Oct 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://jegan902.github.io/devblog-hugo/tags/async/index.xml" rel="self" type="application/rss+xml"/><item><title>Hiểu về Async/Await trong JavaScript</title><link>https://jegan902.github.io/devblog-hugo/blog/async-await-js/</link><pubDate>Mon, 06 Oct 2025 00:00:00 +0000</pubDate><guid>https://jegan902.github.io/devblog-hugo/blog/async-await-js/</guid><description>&lt;h1 id="hiểu-về-asyncawait-trong-javascript"&gt;Hiểu về Async/Await trong JavaScript&lt;/h1&gt;
+&lt;p&gt;JavaScript là một ngôn ngữ lập trình phổ biến được sử dụng rộng rãi trong phát triển web. Một trong những thách thức lớn khi làm việc với JavaScript là xử lý các tác vụ bất đồng bộ (asynchronous tasks). Trước đây, chúng ta thường sử dụng callback và Promise để quản lý các tác vụ này, nhưng với sự xuất hiện của async/await, việc viết mã bất đồng bộ trở nên dễ dàng và trực quan hơn rất nhiều. Trong bài viết này, chúng ta sẽ tìm hiểu về async/await và cách sử dụng chúng trong JavaScript.&lt;/p&gt;</description></item></channel></rss>

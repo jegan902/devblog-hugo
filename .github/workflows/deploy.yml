@@ -1,18 +1,27 @@
 name: Deploy to GitHub Pages
+
 on:
   push:
-    branches: [main]
+    branches:
+      - main
+
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-        with: { submodules: true }
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          submodules: true  # Cần nếu dùng theme submodule
+
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
-        with: { version: 'latest', extended: true }
+        with:
+          hugo-version: 'latest'
+
       - name: Build
         run: hugo --minify
+
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
