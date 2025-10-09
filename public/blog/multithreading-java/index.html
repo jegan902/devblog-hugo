@@ -1,0 +1,928 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head><script src="/devblog-hugo/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=devblog-hugo/livereload" data-no-instant defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lập Trình Đa Luồng trong Java | DevBlog</title>
+  
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Lập Trình Đa Luồng trong Java - DevBlog</title>
+<meta name="author" content="Nguyễn Ngọc hưng">
+<meta name="description" content="Tìm hiểu về lập trình đa luồng trong Java và cách sử dụng các công cụ để quản lý đồng thời.">
+
+
+<meta property="og:title" content="Lập Trình Đa Luồng trong Java - DevBlog">
+<meta property="og:description" content="Tìm hiểu về lập trình đa luồng trong Java và cách sử dụng các công cụ để quản lý đồng thời.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="http://localhost:1313/devblog-hugo/blog/multithreading-java/">
+
+<meta property="og:image" content="https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=80">
+
+
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Lập Trình Đa Luồng trong Java - DevBlog">
+<meta name="twitter:description" content="Tìm hiểu về lập trình đa luồng trong Java và cách sử dụng các công cụ để quản lý đồng thời.">
+
+<meta name="twitter:image" content="https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=80">
+
+
+
+<link rel="icon" href="/favicon.ico" type="image/x-icon">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js" defer></script>
+
+
+<link rel="stylesheet" href="http://localhost:1313/devblog-hugo/css/style.css">
+
+
+<script src="http://localhost:1313/devblog-hugo/js/script.js" defer></script>
+</head>
+<body class="font-sans bg-gray-950 text-gray-100">
+  <header>
+  <div class="header-container">
+    <a href="/devblog-hugo/" class="logo"><span>&lt;/&gt;</span> DevBlog</a>
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+      <span class="hamburger"></span>
+    </button>
+      <nav id="main-nav" class="nav-link active" aria-label="Main navigation">
+      
+        <a href="/devblog-hugo/" >Trang chủ</a>
+      
+        <a href="/devblog-hugo/blog/" >Blog</a>
+      
+        <a href="/devblog-hugo/about/" >Giới thiệu</a>
+      
+        <a href="/devblog-hugo/contact/" >Liên hệ</a>
+      
+    </nav>
+  </div>
+</header>
+
+  <main class="container mx-auto px-6 py-10">
+    
+<article class="post-detail">
+  
+  
+  <header class="post-hero">
+    <div class="hero-overlay">
+      <div class="hero-content">
+        <h1 class="post-title">Lập Trình Đa Luồng trong Java</h1>
+        <div class="post-meta">
+          <span class="meta-author">👤 Nguyễn Ngọc Hưng</span>
+          <span class="meta-date">📅 06/10/2025</span>
+          
+            <div class="post-tags">
+              
+                <span class="tag">#java</span>
+              
+                <span class="tag">#multithreading</span>
+              
+                <span class="tag">#concurrency</span>
+              
+            </div>
+          
+        </div>
+      </div>
+    </div>
+    <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="Lập Trình Đa Luồng trong Java" class="hero-image" loading="lazy">
+  </header>
+  
+
+  <div class="post-content">
+    <h1 id="lập-trình-đa-luồng-trong-java">Lập Trình Đa Luồng trong Java</h1>
+<p>Lập trình đa luồng (multithreading) là một kỹ thuật quan trọng trong phát triển phần mềm, cho phép một ứng dụng thực hiện nhiều tác vụ cùng một lúc. Java cung cấp một mô hình đa luồng mạnh mẽ, giúp tối ưu hóa hiệu suất và cải thiện trải nghiệm người dùng. Trong bài viết này, chúng ta sẽ tìm hiểu về lập trình đa luồng trong Java và cách sử dụng các công cụ để quản lý đồng thời.</p>
+<h2 id="hiểu-về-đa-luồng">Hiểu về Đa Luồng</h2>
+<p>Đa luồng là khả năng của một chương trình để thực hiện nhiều luồng (threads) cùng một lúc. Mỗi luồng đại diện cho một dòng điều khiển riêng biệt trong chương trình, có thể chạy song song với các luồng khác. Điều này giúp tận dụng tối đa tài nguyên hệ thống và cải thiện hiệu suất của ứng dụng.</p>
+<h2 id="tạo-và-quản-lý-luồng-trong-java">Tạo và Quản Lý Luồng trong Java</h2>
+<p>Trong Java, bạn có thể tạo luồng bằng cách kế thừa lớp Thread hoặc triển khai giao diện Runnable. Dưới đây là ví dụ về cả hai cách:</p>
+<h3 id="kế-thừa-lớp-thread">Kế thừa lớp Thread</h3>
+<p><code>java class MyThread extends Thread { public void run() { for (int i = 0; i &lt; 5; i++) { System.out.println(&quot;Thread: &quot; + i); } } } public class ThreadExample { public static void main(String[] args) { MyThread thread1 = new MyThread(); MyThread thread2 = new MyThread(); thread1.start(); thread2.start(); } } </code></p>
+<h3 id="triển-khai-giao-diện-runnable">Triển khai giao diện Runnable</h3>
+<p><code>java class MyRunnable implements Runnable { public void run() { for (int i = 0; i &lt; 5; i++) { System.out.println(&quot;Runnable: &quot; + i); } } } public class RunnableExample { public static void main(String[] args) { Thread thread1 = new Thread(new MyRunnable()); Thread thread2 = new Thread(new MyRunnable()); thread1.start(); thread2.start(); } } </code></p>
+<h2 id="đồng-bộ-hóa-luồng">Đồng Bộ Hóa Luồng</h2>
+<p>Khi nhiều luồng truy cập và thay đổi cùng một tài nguyên chung, có thể xảy ra các vấn đề về đồng bộ hóa (synchronization). Java cung cấp từ khóa synchronized để đảm bảo rằng chỉ một luồng có thể truy cập vào một phương thức hoặc khối mã tại một thời điểm.
+`java
+class Counter {
+private int count = 0;</p>
+<pre><code>public synchronized void increment() {
+    count++;
+}
+
+public int getCount() {
+    return count;
+}
+</code></pre>
+<p>}
+public class SyncExample {
+public static void main(String[] args) throws InterruptedException {
+Counter counter = new Counter();
+Thread t1 = new Thread(() -&gt; {
+for (int i = 0; i &lt; 1000; i++) {
+counter.increment();
+}
+});
+Thread t2 = new Thread(() -&gt; {
+for (int i = 0; i &lt; 1000; i++) {
+counter.increment();
+}
+});
+t1.start();
+t2.start();
+t1.join();
+t2.join();
+System.out.println(&ldquo;Final count: &quot; + counter.getCount());
+}
+}
+`</p>
+<h2 id="lợi-ích-của-đa-luồng">Lợi Ích của Đa Luồng</h2>
+<ul>
+<li><strong>Tăng hiệu suất</strong>: Tận dụng tối đa tài nguyên hệ thống bằng cách thực hiện nhiều tác vụ cùng lúc.</li>
+<li><strong>Cải thiện trải nghiệm người dùng</strong>: Giúp ứng dụng phản hồi nhanh hơn bằng cách xử lý các tác vụ nặng trong luồng riêng biệt.</li>
+<li><strong>Quản lý tài nguyên hiệu quả</strong>: Giúp tối ưu hóa việc sử dụng CPU và bộ nhớ.</li>
+</ul>
+<h2 id="kết-luận">Kết Luận</h2>
+<p>Lập trình đa luồng là một kỹ thuật quan trọng trong phát triển phần mềm, giúp cải thiện hiệu suất và trải nghiệm người dùng. Bằng cách hiểu và áp dụng các khái niệm về luồng, đồng bộ hóa và quản lý tài nguyên, bạn có thể xây dựng các ứng dụng Java hiệu quả và mạnh mẽ. Hãy tiếp tục khám phá và thực hành để nâng cao kỹ năng lập trình đa luồng của bạn!</p>
+
+  </div>
+
+  <footer class="post-footer">
+
+    <div class="related-posts">
+      <h2>BÀI VIẾT LIÊN QUAN</h2>
+   <div class="featured-grid">
+      
+      
+      <article class="featured-card">
+        <a href="http://localhost:1313/devblog-hugo/blog/design-patterns-java/">
+          <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="Các mẫu thiết kế phổ biến trong Java" loading="lazy">
+        </a>
+
+        <div class="card-body">
+          <div class="card-meta">
+            <span class="tag">
+              java
+            </span>
+            <span class="read-time">
+              8 phút đọc
+            </span>
+          </div>
+
+          <h3><a href="http://localhost:1313/devblog-hugo/blog/design-patterns-java/">Các mẫu thiết kế phổ biến trong Java</a></h3>
+          <p>Khám phá các mẫu thiết kế (design patterns) phổ biến trong Java và cách áp dụng chúng để xây dựng các ứng dụng hiệu quả và dễ bảo trì.</p>
+
+          <div class="card-footer">
+            <span class="author">Nguyễn Ngọc Hưng</span>
+            <a href="http://localhost:1313/devblog-hugo/blog/design-patterns-java/" class="read-more">
+              Đọc tiếp <i data-lucide="arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </article>
+      
+      <article class="featured-card">
+        <a href="http://localhost:1313/devblog-hugo/blog/async-await-js/">
+          <img src="https://images.unsplash.com/photo-1518773553398-650c184e0bb3?ixlib=rb-4.0.3&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="Hiểu về Async/Await trong JavaScript" loading="lazy">
+        </a>
+
+        <div class="card-body">
+          <div class="card-meta">
+            <span class="tag">
+              javascript
+            </span>
+            <span class="read-time">
+              6 phút đọc
+            </span>
+          </div>
+
+          <h3><a href="http://localhost:1313/devblog-hugo/blog/async-await-js/">Hiểu về Async/Await trong JavaScript</a></h3>
+          <p>Tìm hiểu cách sử dụng async/await để xử lý các tác vụ bất đồng bộ trong JavaScript một cách dễ dàng và hiệu quả.</p>
+
+          <div class="card-footer">
+            <span class="author">Nguyễn Ngọc Hưng</span>
+            <a href="http://localhost:1313/devblog-hugo/blog/async-await-js/" class="read-more">
+              Đọc tiếp <i data-lucide="arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </article>
+      
+      <article class="featured-card">
+        <a href="http://localhost:1313/devblog-hugo/blog/closures-js/">
+          <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?ixlib=rb-4.0.3&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="Hiểu về Closures trong JavaScript" loading="lazy">
+        </a>
+
+        <div class="card-body">
+          <div class="card-meta">
+            <span class="tag">
+              javascript
+            </span>
+            <span class="read-time">
+              5 phút đọc
+            </span>
+          </div>
+
+          <h3><a href="http://localhost:1313/devblog-hugo/blog/closures-js/">Hiểu về Closures trong JavaScript</a></h3>
+          <p>Tìm hiểu về closures trong JavaScript, cách chúng hoạt động và ứng dụng thực tế.</p>
+
+          <div class="card-footer">
+            <span class="author">Nguyễn Ngọc Hưng</span>
+            <a href="http://localhost:1313/devblog-hugo/blog/closures-js/" class="read-more">
+              Đọc tiếp <i data-lucide="arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </article>
+      
+    </div>
+    </div>
+    <a href="/blog/" class="btn secondary">← Quay lại Blog</a>
+  </footer>
+</article>
+
+<style>
+ 
+.post-detail {
+  max-width: 1200px;  
+  margin: 0 auto;
+  background: linear-gradient(135deg, #000000 0%, #111111 50%, #1a1a1a 100%);
+  color: #fff;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+.post-hero {
+  position: relative;
+  width: 100%;
+  height: 60vh;
+  min-height: 400px;
+  margin-bottom: 40px;
+  opacity: 0;
+  transform: scale(0.95);
+  animation: zoomIn 1s ease forwards;
+}
+@keyframes zoomIn {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(0,0,0,0.7) 0%, rgba(26,26,46,0.8) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  z-index: 2;
+}
+.hero-content {
+  max-width: 800px;
+  padding: 0 20px;
+  animation: fadeInUp 0.8s ease 0.3s forwards;
+  opacity: 0;
+  transform: translateY(20px);
+}
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.hero-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+  filter: brightness(0.6) contrast(1.1);
+  transition: filter 0.5s ease;
+}
+.post-hero:hover .hero-image {
+  filter: brightness(0.5) contrast(1.2);
+}
+.post-title {
+  font-size: 3.2rem;
+  background: linear-gradient(135deg, #d8ff4d 0%, #a8e02d 50%, #8fd12d 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 20px;
+  font-weight: 800;
+  letter-spacing: -0.4px;
+  text-shadow: 0 0 20px rgba(216, 255, 77, 0.3);
+  line-height: 1.2;
+}
+.post-header .post-title {
+  font-size: 2.8rem;
+  text-shadow: 0 0 10px rgba(216, 255, 77, 0.2);
+}
+.post-meta {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+  flex-wrap: wrap;
+  color: #e0e0e0;
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+}
+.meta-author, .meta-date {
+  background: linear-gradient(135deg, rgba(216, 255, 77, 0.1) 0%, rgba(168, 224, 45, 0.05) 100%);
+  padding: 8px 16px;
+  border-radius: 25px;
+  border: 1px solid rgba(216, 255, 77, 0.3);
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+.meta-author:hover, .meta-date:hover {
+  box-shadow: 0 5px 15px rgba(216, 255, 77, 0.2);
+  transform: translateY(-2px);
+}
+.post-tags {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 15px;
+}
+.tag {
+  background: linear-gradient(135deg, rgba(216, 255, 77, 0.15) 0%, rgba(168, 224, 45, 0.1) 100%);
+  color: #d8ff4d;
+  padding: 6px 14px;
+  border-radius: 20px;
+  border: 1px solid rgba(216, 255, 77, 0.4);
+  font-size: 0.95rem;
+  text-decoration: none;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  cursor: pointer;
+}
+.tag:hover {
+  background: linear-gradient(135deg, #d8ff4d 0%, #a8e02d 100%);
+  color: #000;
+  transform: scale(1.05) translateY(-2px);
+  box-shadow: 0 5px 15px rgba(216, 255, 77, 0.3);
+}
+
+ 
+.post-content {
+  line-height: 1.9;
+  font-size: 1.15rem;
+  color: #e0e0e0;
+  animation: fadeIn 0.6s ease 0.5s forwards;
+  opacity: 0;
+}
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+.post-content > * {
+  margin-bottom: 25px;
+}
+.post-content h1, .post-content h2, .post-content h3, .post-content h4 {
+  color: #d8ff4d;
+  margin-top: 35px;
+  margin-bottom: 18px;
+  font-weight: 700;
+  position: relative;
+}
+.post-content h1::after, .post-content h2::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 50px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #d8ff4d, transparent);
+}
+.post-content h1 { font-size: 2.4rem; }
+.post-content h2 { font-size: 2rem; }
+.post-content h3 { font-size: 1.6rem; }
+.post-content p {
+  margin-bottom: 25px;
+  text-align: justify;
+}
+.post-content strong {
+  color: #d8ff4d;
+  font-weight: 700;
+}
+.post-content blockquote {
+  background: linear-gradient(135deg, rgba(216, 255, 77, 0.05) 0%, rgba(168, 224, 45, 0.03) 100%);
+  border-left: 4px solid #d8ff4d;
+  padding: 20px 25px;
+  margin: 30px 0;
+  font-style: italic;
+  color: #ccc;
+  border-radius: 0 8px 8px 0;
+  box-shadow: 0 4px 15px rgba(216, 255, 77, 0.1);
+  position: relative;
+}
+.post-content blockquote::before {
+  content: '"';
+  font-size: 4rem;
+  color: #d8ff4d;
+  position: absolute;
+  top: -10px;
+  left: 15px;
+  opacity: 0.5;
+}
+.post-content ul, .post-content ol {
+  padding-left: 35px;
+  margin-bottom: 25px;
+}
+.post-content li {
+  margin-bottom: 10px;
+  position: relative;
+}
+.post-content ul li::before {
+  content: '▸';
+  color: #d8ff4d;
+  position: absolute;
+  left: -25px;
+  font-weight: bold;
+}
+.post-content code {
+  background: linear-gradient(135deg, rgba(216, 255, 77, 0.1) 0%, rgba(168, 224, 45, 0.05) 100%);
+  color: #d8ff4d;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-family: 'Courier New', monospace;
+  font-size: 0.98rem;
+  border: 1px solid rgba(216, 255, 77, 0.2);
+}
+.post-content pre {
+  background: linear-gradient(135deg, #1a1a1a 0%, #0f0f23 100%);
+  padding: 25px;
+  border-radius: 12px;
+  overflow-x: auto;
+  border-left: 5px solid #d8ff4d;
+  margin: 25px 0;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  position: relative;
+}
+.post-content pre code {
+  background: none;
+  padding: 0;
+  color: #fff;
+  font-size: 0.95rem;
+}
+.post-content pre::before {
+  content: '💻 Code Block';
+  position: absolute;
+  top: -10px;
+  left: 20px;
+  background: #d8ff4d;
+  color: #000;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+.post-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 25px 0;
+  background: rgba(26, 26, 46, 0.4);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+.post-content th, .post-content td {
+  border: 1px solid rgba(216, 255, 77, 0.2);
+  padding: 15px;
+  text-align: left;
+}
+.post-content th {
+  background: linear-gradient(135deg, #d8ff4d 0%, #a8e02d 100%);
+  color: #000;
+  font-weight: bold;
+}
+.post-content td {
+  background: rgba(255, 255, 255, 0.02);
+  transition: background 0.3s ease;
+}
+.post-content tr:hover td {
+  background: rgba(216, 255, 77, 0.05);
+}
+
+ 
+.post-content img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  margin: 30px 0;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6), 0 0 20px rgba(216, 255, 77, 0.2);
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  cursor: pointer;
+  position: relative;
+}
+.post-content img:hover {
+  transform: scale(1.02) translateY(-5px);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.7), 0 0 30px rgba(216, 255, 77, 0.4);
+}
+.post-content figcaption {
+  text-align: center;
+  color: #b8b8b8;
+  font-size: 0.9rem;
+  font-style: italic;
+  margin-top: 10px;
+  padding: 0 10px;
+}
+.post-content figure {
+  margin: 30px 0;
+  text-align: center;
+}
+
+ 
+.post-footer {
+  margin-top: 50px;
+  padding-top: 35px;
+  border-top: 2px solid rgba(216, 255, 77, 0.3);
+  animation: fadeIn 0.6s ease 0.7s forwards;
+  opacity: 0;
+}
+.btn {
+  display: inline-block;
+  padding: 12px 30px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 700;
+  text-transform: uppercase;
+  background: linear-gradient(135deg, #d8ff4d 0%, #a8e02d 100%);
+  color: #000;
+  box-shadow: 0 8px 20px rgba(216, 255, 77, 0.3);
+  transform: translateY(0) scale(1);
+  margin-top: 20px;
+  font-size: 1.05rem;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  letter-spacing: 0.4px;
+}
+.btn.secondary {
+  color: #d8ff4d;
+  border: 2px solid #d8ff4d;
+  background: transparent;
+}
+.btn.secondary:hover {
+  background: linear-gradient(135deg, #d8ff4d 0%, #a8e02d 100%);
+  color: #000;
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 8px 20px rgba(216, 255, 77, 0.3);
+}
+
+ 
+.related-posts {
+  margin-top: 40px;
+  padding-top: 30px;
+  border-top: 2px solid rgba(216, 255, 77, 0.3);
+}
+.related-posts h2 {
+  color: #d8ff4d;
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  text-align: center;
+}
+.featured-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);  
+  gap: 20px;
+  justify-items: center;
+  visibility: visible;  
+}
+.featured-card {
+  background: linear-gradient(135deg, #1a1a1a 0%, #0f0f23 100%);
+  border-radius: 12px;
+  overflow: hidden;
+  width: 350px;  
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease;
+  opacity: 1;  
+}
+.featured-card:hover {
+  transform: translateY(-5px);
+}
+.featured-card a {
+  text-decoration: none;
+}
+.featured-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-bottom: 2px solid rgba(216, 255, 77, 0.3);
+}
+.card-body {
+  padding: 20px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.card-meta {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+  color: #b8b8b8;
+  font-size: 1.1rem;
+}
+.card-meta .tag {
+  background: rgba(216, 255, 77, 0.1);
+  padding: 6px 14px;
+  border-radius: 15px;
+  color: #d8ff4d;
+  font-size: 1.1rem;
+}
+.card-meta .read-time {
+  color: #b8b8b8;
+  font-size: 1.1rem;
+}
+h3 {
+  font-size: 1.6rem;
+  margin: 15px 0;
+  color: #d8ff4d;
+}
+h3 a {
+  color: #d8ff4d;
+  text-decoration: none;
+}
+h3 a:hover {
+  text-decoration: underline;
+}
+.card-body p {
+  font-size: 1.2rem;
+  color: #e0e0e0;
+  margin: 15px 0;
+  text-align: left;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 15px;
+  color: #b8b8b8;
+  font-size: 1.1rem;
+}
+.author {
+  color: #d8ff4d;
+  font-size: 1.1rem;
+}
+.read-more {
+  color: #d8ff4d;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+.read-more:hover {
+  text-decoration: underline;
+}
+
+ 
+@media (max-width: 1100px) {
+  .post-hero {
+    height: 50vh;
+    min-height: 300px;
+  }
+  .post-title {
+    font-size: 2.4rem;
+  }
+  .post-meta {
+    flex-direction: column;
+    gap: 12px;
+  }
+  .post-content {
+    font-size: 1.05rem;
+    padding: 0 10px;
+  }
+  .post-content pre {
+    padding: 18px;
+    margin: 20px -10px;
+  }
+  .post-content img {
+    margin: 20px -10px;
+    border-radius: 0;
+  }
+  .featured-grid {
+    grid-template-columns: repeat(2, 1fr);  
+  }
+  .featured-card {
+    width: 100%;
+    height: 400px;
+  }
+  .featured-card img {
+    height: 220px;
+  }
+}
+
+@media (max-width: 600px) {
+  .post-detail {
+    padding: 20px 10px;
+  }
+  .post-hero {
+    height: 40vh;
+    min-height: 250px;
+  }
+  .post-title {
+    font-size: 2rem;
+  }
+  .post-tags {
+    justify-content: flex-start;
+    gap: 8px;
+  }
+  .tag {
+    font-size: 0.85rem;
+    padding: 4px 10px;
+  }
+  .btn {
+    padding: 10px 20px;
+    font-size: 0.95rem;
+    text-align: center;
+  }
+  .featured-grid {
+    grid-template-columns: 1fr;  
+  }
+  .featured-card {
+    width: 100%;
+    height: 400px;
+  }
+  .featured-card img {
+    height: 220px;
+  }
+}
+</style>
+
+<script>
+
+document.addEventListener('DOMContentLoaded', function() {
+  
+  const images = document.querySelectorAll('.post-content img');
+  images.forEach(img => {
+    img.addEventListener('click', function() {
+      const lightbox = document.createElement('div');
+      lightbox.style.cssText = `
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.9);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 9999;
+        cursor: pointer;
+      `;
+      const enlarged = this.cloneNode();
+      enlarged.style.maxWidth = '90%';
+      enlarged.style.maxHeight = '90%';
+      enlarged.style.borderRadius = '8px';
+      enlarged.style.boxShadow = '0 0 50px rgba(216, 255, 77, 0.5)';
+      lightbox.appendChild(enlarged);
+      document.body.appendChild(lightbox);
+      
+      lightbox.addEventListener('click', () => {
+        document.body.removeChild(lightbox);
+      });
+    });
+  });
+
+  
+  const contentElements = document.querySelectorAll('.post-content > *:not(img)');
+  contentElements.forEach((el, index) => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateX(-20px)';
+    el.style.transition = `opacity 0.6s ease ${index * 0.1}s, transform 0.6s ease ${index * 0.1}s`;
+    setTimeout(() => {
+      el.style.opacity = '1';
+      el.style.transform = 'translateX(0)';
+    }, 500 + index * 100);
+  });
+
+  
+  const tags = document.querySelectorAll('.tag');
+  tags.forEach(tag => {
+    tag.style.cursor = 'pointer';
+    tag.addEventListener('click', function() {
+      window.location.href = `/tags/${this.textContent.substring(1).toLowerCase()}/`;
+    });
+  });
+
+  
+  const links = document.querySelectorAll('a[href^="#"]');
+  links.forEach(link => {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  });
+});
+</script>
+
+  </main>
+    <footer class="footer-section footer-padding bg-dars border-top border-gray">
+    <div class="footer-container container-max mx-center px-standard">
+      <div class="footer-grid">
+        <div class="footer-item">
+          <h3 class="footer-logo text-yellow">&lt;/&gt; DevBlog</h3>
+          <p class="footer-desc text-gray">Chia sẻ kiến thức lập trình Java và JavaScript. Hỗ trợ phát triển ứng dụng web hiện đại.</p>
+          <div class="social-links">
+            <a href="https://github.com/yourusername" target="_blank" class="social-icon"><i class="fab fa-github"></i></a>
+            <a href="https://linkedin.com/in/yourusername" target="_blank" class="social-icon"><i class="fab fa-linkedin"></i></a>
+            <a href="mailto:nguyenvana@example.com" class="social-icon"><i class="fas fa-envelope"></i></a>
+          </div>
+        </div>
+        <div class="footer-item">
+          <h3 class="footer-title text-yellow">Liên kết nhanh</h3>
+          <ul class="footer-links">
+            <li><a href="/" class="footer-link">Trang chủ</a></li>
+            <li><a href="/blog/" class="footer-link">Blog</a></li>
+            <li><a href="/about/" class="footer-link">Giới thiệu</a></li>
+            <li><a href="/contact/" class="footer-link">Liên hệ</a></li>
+          </ul>
+        </div>
+        <div class="footer-item">
+          <h3 class="footer-title text-yellow">Thông tin liên hệ</h3>
+          <p class="footer-contact text-gray">Email: h.com.vha@gmail.com</p>
+          <p class="footer-contact text-gray">Điện thoại: +84 365 885 628</p>
+          <p class="footer-contact text-gray">Địa chỉ: Hồ Chí Minh, Việt Nam</p>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright-wrapper">
+      <p class="footer-copyright-left text-gray">&copy; 2025 DevBlog. Tất cả quyền được bảo lưu.</p>
+      <p class="footer-copyright-right text-gray">Được xây dựng với ❤️ bởi Nguyễn Ngọc Hưng</p>
+    </div>
+  </footer>
+  
+<script src="http://localhost:1313/devblog-hugo/js/custom.js" defer></script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  console.log("✅ Custom scripts loaded.");
+
+  
+  if (window.lucide) {
+    lucide.createIcons();
+  } else {
+    console.warn("Lucide icons library not loaded.");
+  }
+
+  
+  const header = document.querySelector('header');
+  if (header) {
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 20) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    });
+  }
+
+  
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        e.preventDefault();
+        window.scrollTo({
+          top: target.offsetTop - 80,
+          behavior: 'smooth'
+        });
+      }
+    });
+  });
+
+  
+  const buttons = document.querySelectorAll('.btn-primary, .btn-outline');
+  buttons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      btn.classList.add('clicked');
+      setTimeout(() => btn.classList.remove('clicked'), 250);
+    });
+  });
+});
+</script>
+
+
+</body>
+</html>

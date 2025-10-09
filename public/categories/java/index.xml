@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Java on DevBlog</title>
+    <link>http://localhost:1313/devblog-hugo/categories/java/</link>
+    <description>Recent content in Java on DevBlog</description>
+    <generator>Hugo</generator>
+    <language>vi</language>
+    <lastBuildDate>Mon, 06 Oct 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/devblog-hugo/categories/java/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Các mẫu thiết kế phổ biến trong Java</title>
+      <link>http://localhost:1313/devblog-hugo/blog/design-patterns-java/</link>
+      <pubDate>Mon, 06 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/devblog-hugo/blog/design-patterns-java/</guid>
+      <description>&lt;hr&gt;&#xA;&lt;h1 id=&#34;các-mẫu-thiết-kế-phổ-biến-trong-java&#34;&gt;Các mẫu thiết kế phổ biến trong Java&lt;/h1&gt;&#xA;&lt;p&gt;Mẫu thiết kế (design patterns) là các giải pháp tái sử dụng cho các vấn đề phổ biến trong phát triển phần mềm. Chúng giúp cải thiện cấu trúc và tổ chức mã nguồn, làm cho ứng dụng dễ bảo trì và mở rộng hơn. Trong bài viết này, chúng ta sẽ khám phá một số mẫu thiết kế phổ biến trong Java và cách áp dụng chúng trong lập trình hướng đối tượng (OOP).&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Lập Trình Đa Luồng trong Java</title>
+      <link>http://localhost:1313/devblog-hugo/blog/multithreading-java/</link>
+      <pubDate>Mon, 06 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/devblog-hugo/blog/multithreading-java/</guid>
+      <description>&lt;h1 id=&#34;lập-trình-đa-luồng-trong-java&#34;&gt;Lập Trình Đa Luồng trong Java&lt;/h1&gt;&#xA;&lt;p&gt;Lập trình đa luồng (multithreading) là một kỹ thuật quan trọng trong phát triển phần mềm, cho phép một ứng dụng thực hiện nhiều tác vụ cùng một lúc. Java cung cấp một mô hình đa luồng mạnh mẽ, giúp tối ưu hóa hiệu suất và cải thiện trải nghiệm người dùng. Trong bài viết này, chúng ta sẽ tìm hiểu về lập trình đa luồng trong Java và cách sử dụng các công cụ để quản lý đồng thời.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Xử Lý Ngoại Lệ trong Java</title>
+      <link>http://localhost:1313/devblog-hugo/blog/exception-handling-java/</link>
+      <pubDate>Mon, 06 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/devblog-hugo/blog/exception-handling-java/</guid>
+      <description>&lt;h1 id=&#34;xử-lý-ngoại-lệ-trong-java&#34;&gt;Xử Lý Ngoại Lệ trong Java&lt;/h1&gt;&#xA;&lt;p&gt;Trong quá trình phát triển phần mềm, việc xử lý các lỗi và ngoại lệ là một phần quan trọng để đảm bảo ứng dụng hoạt động ổn định và không bị gián đoạn. Java cung cấp một cơ chế mạnh mẽ để xử lý ngoại lệ thông qua các khối try-catch-finally. Trong bài viết này, chúng ta sẽ tìm hiểu về cách xử lý ngoại lệ trong Java và cách sử dụng các khối try-catch để quản lý lỗi hiệu quả.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Giới thiệu về Java và lập trình hướng đối tượng</title>
+      <link>http://localhost:1313/devblog-hugo/blog/gioi-thieu-ve-java/</link>
+      <pubDate>Sat, 04 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/devblog-hugo/blog/gioi-thieu-ve-java/</guid>
+      <description>&lt;h1 id=&#34;giới-thiệu-về-java-và-lập-trình-hướng-đối-tượng&#34;&gt;Giới thiệu về Java và lập trình hướng đối tượng&lt;/h1&gt;&#xA;&lt;p&gt;Tìm hiểu những khái niệm cơ bản về Java và các nguyên lý lập trình hướng đối tượng trong Java.&lt;/p&gt;&#xA;&lt;h2 id=&#34;java-là-gì&#34;&gt;Java là gì?&lt;/h2&gt;&#xA;&lt;p&gt;Java là một ngôn ngữ lập trình đa năng, thuộc nhóm ngôn ngữ hướng đối tượng, được sử dụng rộng rãi trong phát triển ứng dụng web, ứng dụng doanh nghiệp, ứng dụng di động (Android), và nhiều lĩnh vực khác. Một số đặc điểm chính của Java bao gồm:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Làm việc với Collections Framework trong Java</title>
+      <link>http://localhost:1313/devblog-hugo/blog/collections-java/</link>
+      <pubDate>Sat, 06 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/devblog-hugo/blog/collections-java/</guid>
+      <description>&lt;h1 id=&#34;làm-việc-với-collections-framework-trong-java&#34;&gt;Làm việc với Collections Framework trong Java&lt;/h1&gt;&#xA;&lt;p&gt;Hướng dẫn chi tiết về cách sử dụng &lt;strong&gt;Collections Framework&lt;/strong&gt; để quản lý dữ liệu hiệu quả trong Java.&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;-collections-framework-là-gì&#34;&gt;📘 Collections Framework là gì?&lt;/h2&gt;&#xA;&lt;p&gt;&lt;strong&gt;Collections Framework&lt;/strong&gt; là một kiến trúc thống nhất để biểu diễn và thao tác với các tập hợp dữ liệu như &lt;code&gt;List&lt;/code&gt;, &lt;code&gt;Set&lt;/code&gt;, &lt;code&gt;Map&lt;/code&gt; cùng các lớp triển khai như &lt;code&gt;ArrayList&lt;/code&gt;, &lt;code&gt;HashMap&lt;/code&gt;, v.v.&lt;br&gt;&#xA;Nó giúp việc quản lý dữ liệu trở nên &lt;strong&gt;linh hoạt, nhất quán và dễ bảo trì hơn&lt;/strong&gt;.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
